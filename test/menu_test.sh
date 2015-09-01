@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# tldp.org/LDP/Bash-Beginners-Guide/html/sect_01_05.html
 
 # Logging stuff.
 function e_header()   { echo -e "\n\033[1m$@\033[0m"; }
@@ -79,4 +79,29 @@ function init_files() {
   dirname="$(dirname "$1")"
   f=("$@")
   menu_options=(); menu_selects=()
+  for i in "${!f[@]}"; do menu_options[i]="$(basename "${f[i]}")"; done
+    if [[ -e "$init_file" ]]; then
+    # Read cache file if possible
+    IFS=$'\n' read -d '' -r -a menu_selects < "$init_file"
+  else
+    # Otherwise default to all scripts not specifically for other OSes
+    oses=($(get_os 1))
+    for opt in "${menu_options[@]}"; do
+      remove=
+      for os in "${oses[@]}"; do
+        [[ "$opt" =~ (^|[^a-z])$os($|[^a-z]) ]] && remove=1 && break
+      done
+      [[ "$remove" ]] || menu_selects=("${menu_selects[@]}" "$opt")
+    done
+  fi
+  prompt_menu "Run the following init scripts?" $prompt_delay
+  # Write out cache file for future reading.
+  rm "$init_file" 2>/dev/null
+  for i in "${!menu_selects[@]}"; do
+    echo "${menu_selects[i]}" >> "$init_file"
+    echo "$dirname/${menu_selects[i]}"
+  done
+}
+
+
   
