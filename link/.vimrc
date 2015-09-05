@@ -1,9 +1,6 @@
 " Change mapleader
-let mapleader=","
-
-" Move more naturally up/down when wrapping is enabled.
-nnoremap j gj
-nnoremap k gk
+let g:mapleader=","
+inoremap jk <ESC>
 
 " Local dirs
 if !has('win32')
@@ -50,8 +47,8 @@ autocmd vimrc InsertEnter * :set norelativenumber
 autocmd vimrc InsertLeave * :set relativenumber
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+" set textwidth=80
+" set colorcolumn=+1
 
 " Scrolling
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
@@ -67,6 +64,11 @@ set expandtab " Expand tabs to spaces
 
 " Reformatting
 set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
+
+" Help
+" open help vertically
+command! -nargs=* -complete=help Help vertical belowright help <args>
+autocmd FileType help wincmd L
 
 " Toggle show tabs and trailing spaces (,c)
 if has('win32')
@@ -113,7 +115,7 @@ set ignorecase " Ignore case of searches.
 set smartcase " Ignore 'ignorecase' if search pattern contains uppercase characters.
 
 " Clear last search
-map <silent> <leader>/ <Esc>:nohlsearch<CR>
+nnoremap <leader><space> :nohlsearch<CR>
 
 " Ignore things
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
@@ -264,4 +266,5 @@ Plug 'wavded/vim-stylus'
 Plug 'klen/python-mode', {'for': 'python'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wting/rust.vim', {'for': 'rust'}
+Plug 'mtth/scratch.vim'
 call plug#end()
