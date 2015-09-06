@@ -115,7 +115,7 @@ set ignorecase " Ignore case of searches.
 set smartcase " Ignore 'ignorecase' if search pattern contains uppercase characters.
 
 " Clear last search
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <silent><leader><space> :nohlsearch<CR>
 
 " Ignore things
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
@@ -253,6 +253,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-dispatch'
+Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', {'for': 'go'}
