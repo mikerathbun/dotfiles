@@ -1,3 +1,4 @@
+" Sept 6th
 " Change mapleader
 let g:mapleader=","
 inoremap jk <ESC>
@@ -240,6 +241,14 @@ let g:indent_guides_guide_size = 1
 
 " Mustache/handlebars
 let g:mustache_abbreviations = 1
+
+" Fugitive
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gp :Git push<CR>
+
+"""""""" Finish out the git fugitive settings
+
 
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
