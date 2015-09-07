@@ -4,7 +4,17 @@ e_header "Installing Mono"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 sudo apt-get update
-sudo apt-get install -y mono-complete ca-certificates-mono
+sudo apt-get install -y -qq mono-complete \
+  ca-certificates-mono \
+  libunwind8 \
+  gettext \
+  libssl-dev \
+  libcurl3-dev \
+  zlib1g \
+  make \
+  automake \
+  libtool \
+  curl
 
 # docs.asp.net installing on linux
 e_header "Installing DOT.NET Version Manager"
@@ -18,23 +28,15 @@ dnvm
 e_header "Installing current coreclr"
 dnvm upgrade -r coreclr
 
-
-sudo apt-get install -r libunwind8 \
-  gettext \
-  libssl-dev \
-  libcurl3-dev \
-  zlib1g
-
 e_header "Installing DNX for Mono"
 dnvm upgrade -r mono
 
-e_header "Install libuv"
-sudo apt-get install make automake libtool curl
-curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | sudo tar zxfv - -C /usr/local/src
-cd /usr/local/src/libuv-1.4.2
-sudo sh autogen.sh
-sudo ./configure
-sudo make
-sudo make install
-sudo rm -rf /usr/local/src/libuv-1.4.2 && cd ~/
-sudo ldconfig
+#e_header "Install libuv"
+#sudo apt-get install -y curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | sudo tar zxfv - -C /usr/local/src
+#cd /usr/local/src/libuv-1.4.2
+#sudo sh autogen.sh
+#sudo ./configure
+#sudo make
+#sudo make install
+#sudo rm -rf /usr/local/src/libuv-1.4.2 && cd ~/
+#sudo ldconfig
