@@ -9,7 +9,7 @@ sudo apt-get install -y mono-complete ca-certificates-mono
 # docs.asp.net installing on linux
 e_header "Installing DOT.NET Version Manager"
 curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | \
-  DNX_BRANCH=dev
+  DNX_BRANCH=dev sh
 source ~/.dnx/dnvm/dnvm.sh
 # Just see it work
 dnvm
