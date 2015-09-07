@@ -14,7 +14,8 @@ sudo apt-get install -y -qq mono-complete \
   make \
   automake \
   libtool \
-  curl
+  curl \
+  unzip
 
 # docs.asp.net installing on linux
 e_header "Installing DOT.NET Version Manager"
@@ -26,19 +27,18 @@ dnvm
 
 # Install the .NET Core
 e_header "Installing current coreclr"
-source ~/.dnx/dnvm/dnvm.sh
 dnvm upgrade -r coreclr
 
 e_header "Installing DNX for Mono"
-source ~/.dnx/dnvm/dnvm.sh
 dnvm upgrade -r mono
 
-#e_header "Install libuv"
-#sudo apt-get install -y curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | sudo tar zxfv - -C /usr/local/src
-#cd /usr/local/src/libuv-1.4.2
-#sudo sh autogen.sh
-#sudo ./configure
-#sudo make
-#sudo make install
-#sudo rm -rf /usr/local/src/libuv-1.4.2 && cd ~/
-#sudo ldconfig
+e_header "Install libuv"
+curl -sSL https://github.com/libuv/libuv/archive/v1.7.3.tar.gz | sudo tar zxfv - -C /usr/local/src
+
+cd /usr/local/src/libuv-1.7.3
+sudo sh autogen.sh
+sudo ./configure
+sudo make
+sudo make install
+sudo rm -rf /usr/local/src/libuv-1.7.3 && cd ~/
+sudo ldconfig
