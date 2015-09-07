@@ -2,6 +2,7 @@
 is_ubuntu || return 1
 
 # If the old files isn't removed, the duplicate APT alias will break sudo!
+# TODO find out what this is and why name is hardcoded
 sudoers_old="/etc/sudoers.d/sudoers-cowboy"; [[ -e "$sudoers_old" ]] && sudo rm "$sudoers_old"
 
 # Installing this sudoers file makes life easier.
@@ -52,6 +53,7 @@ packages=(
   sl
   telnet
   tree
+  unzip
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
