@@ -21,14 +21,16 @@ e_header "Installing DOT.NET Version Manager"
 curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | \
   DNX_BRANCH=dev sh
 source ~/.dnx/dnvm/dnvm.sh
-# Just see it work
+# Just see it worK
 dnvm
 
 # Install the .NET Core
 e_header "Installing current coreclr"
+source ~/.dnx/dnvm/dnvm.sh
 dnvm upgrade -r coreclr
 
 e_header "Installing DNX for Mono"
+source ~/.dnx/dnvm/dnvm.sh
 dnvm upgrade -r mono
 
 #e_header "Install libuv"
