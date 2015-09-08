@@ -26,14 +26,14 @@ source ~/.dnx/dnvm/dnvm.sh
 dnvm
 
 # Install the .NET Core
-e_header "Installing current coreclr"
-dnvm upgrade -r coreclr
+# e_header "Installing current coreclr"
+# dnvm upgrade -r coreclr
 
-e_header "Installing DNX for Mono"
-dnvm upgrade -r mono
+# e_header "Installing DNX for Mono"
+# dnvm upgrade -r mono
 
-e_header "Install libuv"
-curl -sSL https://github.com/libuv/libuv/archive/v1.7.3.tar.gz | sudo tar zxfv - -C /usr/local/src
+# e_header "Install libuv"
+# curl -sSL https://github.com/libuv/libuv/archive/v1.7.3.tar.gz | sudo tar zxfv - -C /usr/local/src
 
 cd /usr/local/src/libuv-1.7.3
 sudo sh autogen.sh
@@ -42,3 +42,12 @@ sudo make
 sudo make install
 sudo rm -rf /usr/local/src/libuv-1.7.3 && cd ~/
 sudo ldconfig
+
+e_header "Create NuGet directory"
+mkdir ~/.config ~/.config/Nuget/
+
+e_header "To complete dotnet install:"
+e_header "dnvm upgrade -r coreclr"
+e_header "dnvm upgrade -r mono"
+e_header "You might need to log out and back in."
+
