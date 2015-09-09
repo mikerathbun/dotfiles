@@ -34,9 +34,9 @@ dnvm
 
 # e_header "Install libuv"
 # curl -sSL https://github.com/libuv/libuv/archive/v1.7.3.tar.gz | sudo tar zxfv - -C /usr/local/src
-e_header "Updating ~/.vimrc file
+# e_header "Updating ~/.vimrc file
 
-sed -i "/call plug#end/i Plug \x27omnisharp/omnisharp-vim\x27" ~/.vimrc
+# sed -i "/call plug#end/i Plug \x27omnisharp/omnisharp-vim\x27" ~/.vimrc
 
 cd /usr/local/src/libuv-1.7.3
 sudo sh autogen.sh
@@ -48,9 +48,10 @@ sudo ldconfig
 
 e_header "Create NuGet directory"
 mkdir ~/.config ~/.config/Nuget/
-
+cp ~/.dotfiles/conf/mono/NuGet.Config ~/.Config/NuGet/
+cp ~/.dotfiles/conf/mono/install_dot_net.sh ~/
+chmod +x ~/.install_dot_net.sh
 e_header "To complete dotnet install:"
-e_header "dnvm upgrade -r coreclr"
-e_header "dnvm upgrade -r mono"
 e_header "You might need to log out and back in."
+e_header "run ~/.install_dot_net.sh"
 
