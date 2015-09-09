@@ -34,6 +34,9 @@ dnvm
 
 # e_header "Install libuv"
 # curl -sSL https://github.com/libuv/libuv/archive/v1.7.3.tar.gz | sudo tar zxfv - -C /usr/local/src
+e_header "Updating ~/.vimrc file
+
+sed -i "/call plug#end/i Plug \x27omnisharp/omnisharp-vim\x27" ~/.vimrc
 
 cd /usr/local/src/libuv-1.7.3
 sudo sh autogen.sh
