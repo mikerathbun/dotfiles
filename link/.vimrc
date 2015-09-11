@@ -384,4 +384,5 @@ Plug 'klen/python-mode', {'for': 'python'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wting/rust.vim', {'for': 'rust'}
 Plug 'mtth/scratch.vim'
+Plug 'omnisharp/omnisharp-vim'
 call plug#end()
