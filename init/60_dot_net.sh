@@ -17,6 +17,9 @@ sudo apt-get install -y -qq mono-complete \
   curl \
   unzip
 
+e_header "Installing yo and generators"
+npm install -g yo
+npm install -g generator-aspnet
 # docs.asp.net installing on linux
 e_header "Installing DOT.NET Version Manager"
 curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | \
@@ -51,5 +54,5 @@ cp ~/.dotfiles/conf/mono/install_dot_net.sh ~/
 chmod +x ~/.install_dot_net.sh
 e_header "To complete dotnet install:"
 e_header "You might need to log out and back in."
-e_header "run ~/.install_dot_net.sh"
+e_header "run ~/install_dot_net.sh"
 
