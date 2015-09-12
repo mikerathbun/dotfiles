@@ -18,6 +18,7 @@ sudo apt-get install -y -qq mono-complete \
   unzip
 
 e_header "Installing yo and generators"
+e_header "***** I shouldn't need to do this because I am selecting 50_node.sh"
 npm install -g yo
 npm install -g generator-aspnet
 # docs.asp.net installing on linux
