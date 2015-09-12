@@ -52,7 +52,7 @@ e_header "Create NuGet directory"
 mkdir ~/.config ~/.config/NuGet/
 cp ~/.dotfiles/conf/mono/NuGet.Config ~/.config/NuGet/
 cp ~/.dotfiles/conf/mono/install_dot_net.sh ~/
-chmod +x ~/.install_dot_net.sh
+chmod +x ~/install_dot_net.sh
 e_header "To complete dotnet install:"
 e_header "You might need to log out and back in."
 e_header "run ~/install_dot_net.sh"
