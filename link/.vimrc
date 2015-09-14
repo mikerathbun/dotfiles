@@ -385,4 +385,5 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'wting/rust.vim', {'for': 'rust'}
 Plug 'mtth/scratch.vim'
 Plug 'omnisharp/omnisharp-vim'
+Plug 'oranget/vim-csharp'
 call plug#end()

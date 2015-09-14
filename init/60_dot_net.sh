@@ -15,12 +15,15 @@ sudo apt-get install -y -qq mono-complete \
   automake \
   libtool \
   curl \
-  unzip
+  unzip \
+  nuget
 
 e_header "Installing yo and generators"
 e_header "***** I shouldn't need to do this because I am selecting 50_node.sh"
 npm install -g yo
-npm install -g generator-aspnet
+npm install -g generator-aspnet \
+  grunt-init
+
 # docs.asp.net installing on linux
 e_header "Installing DOT.NET Version Manager"
 curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | \
@@ -56,4 +59,4 @@ chmod +x ~/install_dot_net.sh
 e_header "To complete dotnet install:"
 e_header "You might need to log out and back in."
 e_header "run ~/install_dot_net.sh"
-
+e_header "git clone https://github.com/nosami/grunt-init-csharpsolution.git ~/.grunt-init/csharpsolution"
