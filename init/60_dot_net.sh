@@ -26,18 +26,15 @@ npm install -g generator-aspnet \
 
 # docs.asp.net installing on linux
 e_header "Installing DOT.NET Version Manager"
-curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | \
-  DNX_BRANCH=dev sh
-source ~/.dnx/dnvm/dnvm.sh
-# Just see it worK
-dnvm
+curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
+
 
 # Install the .NET Core
-# e_header "Installing current coreclr"
-# dnvm upgrade -r coreclr
+e_header "Installing current coreclr"
+dnvm upgrade -r coreclr
 
-# e_header "Installing DNX for Mono"
-# dnvm upgrade -r mono
+e_header "Installing DNX for Mono"
+dnvm upgrade -r mono
 
 e_header "Install libuv"
 curl -sSL https://github.com/libuv/libuv/archive/v1.7.3.tar.gz | sudo tar zxfv - -C /usr/local/src
