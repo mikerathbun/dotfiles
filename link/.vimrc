@@ -386,4 +386,5 @@ Plug 'wting/rust.vim', {'for': 'rust'}
 Plug 'mtth/scratch.vim'
 Plug 'omnisharp/omnisharp-vim'
 Plug 'oranget/vim-csharp'
+Plug 'valloric/youcompleteme'
 call plug#end()
