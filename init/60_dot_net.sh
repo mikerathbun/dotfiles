@@ -22,16 +22,22 @@ sudo apt-get install -y -qq mono-complete \
   build-essential
 
 e_header "Installing yo and generators"
-npm install -g yo
-npm install -g generator-aspnet \
-  grunt-init
+npm install -g yo \
+  generator-webapp \
+  generator-aspnet \
+  grunt-init \
+  bower \
+  grunt-cli \
+  gulp
 
 e_header "Install the grunt-init csharp generator"
 e_header "to run type ' grunt-init csharpsolution"
 git clone https://github.com/nosami/grunt-init-csharpsolution.git ~/.grunt-init/csharpsolution
 
-e_header "Compile YouCompleteMe for Vim"
-~/.vim/plugged/youcompleteme/install.py --clang-completer --omnisharp-completer --gocode-completer
+# Not going to be using a local install of vim for crazy stuff anymore. More trouble than it's worth
+
+# e_header "Compile YouCompleteMe for Vim"
+# ~/.vim/plugged/youcompleteme/install.py --clang-completer --omnisharp-completer --gocode-completer
 # docs.asp.net installing on linux
 e_header "Installing DOT.NET Version Manager"
 curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
