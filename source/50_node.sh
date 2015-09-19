@@ -30,9 +30,13 @@ npm_globals=(
   ember-cli
   grunt-cli
   grunt-init
+  gulp
   linken
   node-inspector
   yo
+  generator-webapp
+  generator-aspnet
+
 )
 
 # Update npm and install global modules.
