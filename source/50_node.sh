@@ -36,6 +36,7 @@ npm_globals=(
   yo
   generator-webapp
   generator-aspnet
+  generator-angular
 
 )
 
