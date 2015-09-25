@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo gem install compass
 # this will install javascript dev environment
 echo "Install linuxbrew"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
@@ -18,3 +19,5 @@ npm install -g yo \
   generator-webapp \
   generator-angular \
   generator-aspnet
+
+
