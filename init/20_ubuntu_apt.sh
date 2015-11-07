@@ -40,20 +40,21 @@ sudo apt-get -qq dist-upgrade
 
 # Install APT packages.
 packages=(
-  ansible
   build-essential
   cowsay
   git-core
   htop
   id3tool
   libssl-dev
-  mercurial
   nmap
   silversearcher-ag
   sl
   telnet
   tree
   unzip
+  ruby
+  ruby-dev
+
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
