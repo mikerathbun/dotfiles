@@ -1,10 +1,13 @@
-set editing-mode vi
+# Updated to remove vi editing on bash 10/24/2015
+# set editing-mode vi
 
+# Updated to remove vi editing on bash 10/24/2015
 # COMMAND MODE
-set keymap vi-command
+# set keymap vi-command
 
+# Updated to remove vi editing on bash 10/24/2015
 # INSERT MODE
-set keymap vi-insert
+#set keymap vi-insert
 
 # Up/down arrows search history
 "\e[A": history-search-backward
