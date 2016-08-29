@@ -2,6 +2,7 @@
 " Change mapleader
 let g:mapleader=","
 inoremap jk <ESC>
+inoremap <leader><CR> <ESC>o
 
 " Local dirs
 if !has('win32')
@@ -116,7 +117,7 @@ set ignorecase " Ignore case of searches.
 set smartcase " Ignore 'ignorecase' if search pattern contains uppercase characters.
 
 " Clear last search TODO: Find a replacement
-"nnoremap <silent><leader><space> :nohlsearch<CR>
+nnoremap <silent><leader><space> :nohlsearch<CR>
 
 " Ignore things
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
@@ -247,9 +248,6 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gp :Git push<CR>
 
-" rust
-let g:rustc_path = "/usr/local/bin/rustc"
-let g:rustfmt_autosave = 1
 
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
@@ -279,5 +277,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
+Plug 'digitaltoad/vim-pug'
 " Plug 'valloric/youcompleteme'
 call plug#end()

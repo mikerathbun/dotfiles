@@ -22,5 +22,5 @@ function dotfiles() {
   $DOTFILES/bin/dotfiles "$@" && src
 }
 source /usr/local/Cellar/dnvm/1.0.0-dev/libexec/dnvm.sh
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
 src
