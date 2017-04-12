@@ -21,6 +21,6 @@ function src() {
 function dotfiles() {
   $DOTFILES/bin/dotfiles "$@" && src
 }
-source /usr/local/Cellar/dnvm/1.0.0-dev/libexec/dnvm.sh
+
 export GOPATH=$HOME/Documents/dev/go
 src
