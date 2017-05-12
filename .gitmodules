@@ -1,3 +1,6 @@
 [submodule "git-extras"]
 	path = vendor/git-extras
 	url = git://github.com/visionmedia/git-extras.git
+[submodule "vendor/rbenv"]
+	path = vendor/rbenv
+	url = git://github.com/rbenv/rbenv
