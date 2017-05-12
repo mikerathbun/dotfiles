@@ -270,6 +270,8 @@ fi
 
 # If Git is not installed, install it (Ubuntu only, since Git comes standard
 # with recent XCode or CLT)
+# Mike: Not sure if this is still the case. I might just get lucky with the Vagrant
+# boxes that I use.
 if [[ ! "$(type -P git)" ]] && is_ubuntu; then
   e_header "Installing Git"
   sudo apt-get -qq install git-core
