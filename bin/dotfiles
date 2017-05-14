@@ -236,7 +236,6 @@ function do_stuff() {
   echo "1: Iterating over files"
   for file in "${files[@]}"; do
     base="$(basename $file)"
-    echo "dest is: $HOME/$base"
     dest="$HOME/$base"
     # Run _test function only if declared.
     if [[ $(declare -f "$1_test") ]]; then
@@ -258,6 +257,7 @@ function do_stuff() {
       fi
     fi
     # Do stuff.
+  echo "2: We are using $1 and the do is $1_do with $base and $file"
     "$1_do" "$base" "$file"
   done
 }
