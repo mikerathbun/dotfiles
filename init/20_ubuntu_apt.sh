@@ -41,7 +41,6 @@ sudo apt-get -qq dist-upgrade
 # Install APT packages.
 packages=(
   build-essential
-  cowsay
   git
   htop
   libssl-dev
@@ -49,8 +48,6 @@ packages=(
   telnet
   tree
   unzip
-  ruby
-  ruby-dev
 
 )
 
