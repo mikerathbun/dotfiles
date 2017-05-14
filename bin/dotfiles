@@ -31,6 +31,7 @@ function e_success()  { echo -e " \033[1;32m✔\033[0m  $@"; }
 function e_error()    { echo -e " \033[1;31m✖\033[0m  $@"; }
 function e_arrow()    { echo -e " \033[1;34m➜\033[0m  $@"; }
 
+# make a symbolic link from 
 # For testing.
 function assert() {
   local success modes equals actual expected
@@ -217,6 +218,7 @@ function link_test() {
   [[ "$1" -ef "$2" ]] && echo "same file"
 }
 function link_do() {
+  # make a symbolic link from 
   e_success "Linking ~/$1."
   ln -sf ${2#$HOME/} ~/
 }
@@ -231,8 +233,10 @@ function do_stuff() {
   # Run _header function only if declared.
   [[ $(declare -f "$1_header") ]] && "$1_header"
   # Iterate over files.
+  echo "1: Iterating over files"
   for file in "${files[@]}"; do
     base="$(basename $file)"
+    echo "dest is: $HOME/$base"
     dest="$HOME/$base"
     # Run _test function only if declared.
     if [[ $(declare -f "$1_test") ]]; then
