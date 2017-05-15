@@ -3,7 +3,8 @@
 
 # Install needed packages
 e_header "Installing rbenv"
-e_header "Adding needed packages"
+
+source $DOTFILES/source/30_ruby.sh
 
 packages=(
   libyaml-dev
@@ -27,3 +28,5 @@ if (( ${#packages[@]} > 0 )); then
     sudo apt-get -qq install "$package"
   done
 fi
+
+
