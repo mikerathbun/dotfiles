@@ -10,6 +10,7 @@ sudo apt-get -qq dist-upgrade
 packages=(
   build-essential
   git
+  git-core
   htop
   libssl-dev
   nmap
