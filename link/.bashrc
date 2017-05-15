@@ -22,5 +22,4 @@ function dotfiles() {
   $DOTFILES/bin/dotfiles "$@" && src
 }
 
-export GOPATH=$HOME/Documents/dev/go
 src
