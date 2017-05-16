@@ -4,8 +4,8 @@ shopt -s nocaseglob
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-export GREP_OPTIONS='--color=auto'
+# Commenting this out because it was causing errors when I would grep
+# export GREP_OPTIONS='--color=auto'
 
 # Prevent less from clearing the screen while still showing colors.
 export LESS=-XR
