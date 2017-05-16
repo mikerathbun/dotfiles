@@ -29,4 +29,6 @@ if (( ${#packages[@]} > 0 )); then
   done
 fi
 
+e_header "**** TESTING Installing ruby-build into plugins"
 
+git clone https://github.com/rbenv/ruby-build.git $DOTFILES/vendor/rbenv/plugins/ruby-build

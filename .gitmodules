@@ -4,6 +4,3 @@
 [submodule "vendor/rbenv"]
 	path = vendor/rbenv
 	url = https://github.com/rbenv/rbenv
-[submodule "vendor/ruby-build"]
-	path = vendor/ruby-build
-	url = https://github.com/rbenv/ruby-build.git
