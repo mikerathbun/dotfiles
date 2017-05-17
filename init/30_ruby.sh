@@ -29,10 +29,6 @@ if (( ${#packages[@]} > 0 )); then
   done
 fi
 
-e_header "**** TESTING Installing ruby-build into plugins"
-
-git clone https://github.com/rbenv/ruby-build.git $DOTFILES/vendor/rbenv/plugins/ruby-build
-
 # Install ruby
 if [[ "$(type -P rbenv)" ]]; then
   versions=(2.4.1)
@@ -41,7 +37,8 @@ if [[ "$(type -P rbenv)" ]]; then
   if (( ${#rubies[@]} > 0 )); then
     e_header "Installing Ruby versions: ${rubies[*]}"
     for r in "${rubies[@]}"; do
-      rbenv install "$r"
+      # This is just for testing since it takes a long time to actually install it.
+ #     rbenv install "$r"
       [[ "$r" == "${versions[0]}" ]] && rbenv global "$r"
     done
   fi
