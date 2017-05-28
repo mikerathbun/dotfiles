@@ -17,8 +17,3 @@ if (( ${#pip_packages[@]} > 0 )); then
     pip install "$package"
   done
 fi
-
-# Install the Anaconda Python distribution
-version="4.4.0"
-anacondaFileName="Anaconda3--Linux-x86_64.sh"
-downloadAddress="https://repo.continuum.io/archive/"
