@@ -16,6 +16,7 @@ packages=(
   libssl-dev
   nmap
   telnet
+  python-pip
   tree
   unzip
 
