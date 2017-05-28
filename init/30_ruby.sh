@@ -38,7 +38,7 @@ if [[ "$(type -P rbenv)" ]]; then
     e_header "Installing Ruby versions: ${rubies[*]}"
     for r in "${rubies[@]}"; do
       # This is just for testing since it takes a long time to actually install it.
- #     rbenv install "$r"
+     rbenv install "$r"
       [[ "$r" == "${versions[0]}" ]] && rbenv global "$r"
     done
   fi
