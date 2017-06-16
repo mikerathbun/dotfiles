@@ -12,6 +12,11 @@
 /link/.vim/plugged
 /link/.vim/autoload/plug.vim.old
 
+# Do not track anaconda installed files.
+/vendor/anaconda3
+
+
+
 # Don't commit rbenv temp files.
 /link/.rbenv/shims/
 /link/.rbenv/versions/
