@@ -192,6 +192,8 @@ if !exists("*SourceConfigs")
   endfunction
 endif
 
+" This is set for vim-go
+set autowrite
 "" FILE TYPES
 
 " vim
@@ -278,5 +280,6 @@ Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
 Plug 'digitaltoad/vim-pug'
+Plug 'fatih/vim-go'
 " Plug 'valloric/youcompleteme'
 call plug#end()
