@@ -3,6 +3,7 @@ is_ubuntu || return 1
 
 # Update APT.
 e_header "Updating APT"
+sudo add-apt-repository ppa:neovim-ppa/stable -y
 sudo apt-get -qq update
 sudo apt-get -qq dist-upgrade
 
@@ -19,6 +20,7 @@ packages=(
   python-pip
   tree
   unzip
+  neovim
 
 )
 
