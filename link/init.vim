@@ -9,7 +9,7 @@ if !has('win32')
   set backupdir=$DOTFILES/caches/vim
   set directory=$DOTFILES/caches/vim
   set undodir=$DOTFILES/caches/vim
-  let g:netrw_home = expand('$DOTFILES/caches/vim')
+  let g:netrw_home = expand('$DOTFILES/caches/nvim')
 endif
 
 " Create vimrc autocmd group and remove any existing vimrc autocmds,
@@ -192,7 +192,49 @@ if !exists("*SourceConfigs")
   endfunction
 endif
 
-" This is set for vim-go
+if has('nvim')
+    " Enable deoplete on startup
+    let g:deoplete#enable_at_startup = 1
+endif
+
+" This is the setup for vim-go
+syntax enable
+filetype plugin on
+let g:go_disable_autoinstall = 0
+
+" Highlight
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+
+" Auto import of dependencies
+let g:go_fmt_command = "goimports"
+
+let g:go_snippet_engine = "neosnippet"
+
+" Linting
+" Error and warning signs
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
+
+" Enable integration with airline
+let g:airline#extensions#ale#enabled = 1
+
+
+" This is for searching for functions within packages
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
+au FileType go nmap <leader>ga <Plug>(go-alternate-edit)
+au FileType go nmap <leader>gah <Plug>(go-alternate-split)
+au FileType go nmap <leader>gav <Plug>(go-alternate-vertical)
+au FileType go nmap <F10> :GoTest -show<cr>
+au FileType go nmap <F9> :GoCoverageToggle -short<cr>
+au FileType go nmap <F12> <Plug>(go-def)
+
 set autowrite
 "" FILE TYPES
 
@@ -281,5 +323,7 @@ Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
 Plug 'digitaltoad/vim-pug'
 Plug 'fatih/vim-go'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
 " Plug 'valloric/youcompleteme'
 call plug#end()
