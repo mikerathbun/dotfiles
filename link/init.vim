@@ -38,7 +38,7 @@ set background=dark
 set cursorline " Highlight current line
 set number " Enable line numbers.
 set showtabline=2 " Always show tab bar.
-set relativenumber " Use relative line numbers. Current line is still in status bar.
+" set relativenumber " Use relative line numbers. Current line is still in status bar.
 set title " Show the filename in the window titlebar.
 set nowrap " Do not wrap lines.
 set noshowmode " Don't show the current mode (airline.vim takes care of us)
@@ -46,7 +46,7 @@ set laststatus=2 " Always show status line
 
 " Show absolute numbers in insert mode, otherwise relative line numbers.
 autocmd vimrc InsertEnter * :set norelativenumber
-autocmd vimrc InsertLeave * :set relativenumber
+" autocmd vimrc InsertLeave * :set relativenumber
 
 " Make it obvious where 80 characters is
 " set textwidth=80
@@ -292,6 +292,8 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gp :Git push<CR>
 
+" Neosnippet
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.

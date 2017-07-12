@@ -5,3 +5,4 @@ PATH=$PATH:/usr/local/go/bin
 
 export GOPATH=${HOME}/Documents/dev/go
 
+PATH=$PATH:$GOPATH/bin
