@@ -281,5 +281,6 @@ Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
 Plug 'digitaltoad/vim-pug'
 Plug 'fatih/vim-go'
+Plug 'pprovost/vim-ps1'
 " Plug 'valloric/youcompleteme'
 call plug#end()
