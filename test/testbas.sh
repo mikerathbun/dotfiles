@@ -1,15 +1,15 @@
+#!/usr/bin/env bash
 
-# Install the Anaconda Python distribution
-version="4.4.0"
-anacondaFileName="Anaconda3-$version-Linux-x86_64.sh"
-downloadAddress="https://repo.continuum.io/archive/"
 
-echo "It is $version"
-echo "$downloadAddress$anacondaFileName"
+function e_header()   { echo -e "\n\033[1m$@\033[0m"; }
+function e_success()  { echo -e " \033[1;32m✔\033[0m  $@"; }
+function e_error()    { echo -e " \033[1;31m✖\033[0m  $@"; }
+function e_arrow()    { echo -e " \033[1;34m➜\033[0m  $@"; }
 
-echo "Downloading to /tmp"
-cd /tmp
-curl -O "$downloadAddress$anacondaFileName"
-bash $anacondaFileName -b
 
+
+
+e_success "The first is $1 and the second is $2"
+
+# if [[ yy
 

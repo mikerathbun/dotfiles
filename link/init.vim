@@ -290,7 +290,9 @@ let g:mustache_abbreviations = 1
 " Fugitive
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gp :Git push<CR>
+nnoremap <Leader>gp :Gpull<CR>
+nnoremap <leader>gP :Gpush<CR>
+nnoremap <leader>gc :Gcommit -a<CR>
 
 " Neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
