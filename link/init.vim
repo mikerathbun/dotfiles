@@ -141,7 +141,7 @@ nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
 
 " Buffer navigation
-nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
+" nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
 map <leader><leader> :b#<CR> " Switch between the last two files
 map gb :bnext<CR> " Next buffer
 map gB :bprev<CR> " Prev buffer
@@ -161,6 +161,12 @@ map <PageUp> <C-U>
 map <PageDown> <C-D>
 imap <PageUp> <C-O><C-U>
 imap <PageDown> <C-O><C-D>
+
+" Map the quickfix commands
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
 
 " Use Q for formatting the current paragraph (or selection)
 " vmap Q gq
@@ -211,6 +217,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_auto_sameids = 1
 let g:go_auto_type_info = 1
+let g:go_list_type = "quickfix"
 
 " Auto import of dependencies
 let g:go_fmt_command = "goimports"
@@ -234,7 +241,8 @@ au FileType go nmap <leader>gav <Plug>(go-alternate-vertical)
 au FileType go nmap <F10> :GoTest -show<cr>
 au FileType go nmap <F9> :GoCoverageToggle -short<cr>
 au FileType go nmap <F12> <Plug>(go-def)
-
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>r <Plug>(go-run)
 set autowrite
 "" FILE TYPES
 
@@ -277,7 +285,7 @@ let g:signify_vcs_list = ['git', 'hg', 'svn']
 
 " CtrlP.vim
 map <leader>p <C-P>
-map <leader>r :CtrlPMRUFiles<CR>
+" map <leader>r :CtrlPMRUFiles<CR>
 "let g:ctrlp_match_window_bottom = 0 " Show at top of window
 
 " Indent Guides
@@ -296,7 +304,13 @@ nnoremap <leader>gc :Gcommit -a<CR>
 
 " Neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
+" Vim-Indent-guides
+" colorscheme bclear
+set ts=1 sw=2 et
+let g:indent_guides_start_level = 2
 
+"
+"
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
@@ -304,11 +318,11 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
@@ -319,15 +333,15 @@ Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'chase/vim-ansible-yaml'
-Plug 'wavded/vim-stylus'
+" Plug 'wavded/vim-stylus'
 Plug 'klen/python-mode', {'for': 'python'}
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
-Plug 'digitaltoad/vim-pug'
 Plug 'fatih/vim-go'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
+Plug 'othree/xml'
 " Plug 'valloric/youcompleteme'
 call plug#end()
