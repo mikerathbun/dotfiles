@@ -18,6 +18,7 @@ packages=(
   nmap
   telnet
   python-pip
+  python3-pip
   tree
   unzip
   neovim

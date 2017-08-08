@@ -295,6 +295,9 @@ let g:indent_guides_guide_size = 1
 " Mustache/handlebars
 let g:mustache_abbreviations = 1
 
+" deoplete settings
+let g:deoplete#enable_at_startup = 1
+
 " Fugitive
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
@@ -318,11 +321,9 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
-" Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
@@ -333,15 +334,13 @@ Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'chase/vim-ansible-yaml'
-" Plug 'wavded/vim-stylus'
 Plug 'klen/python-mode', {'for': 'python'}
-" Plug 'terryma/vim-multiple-cursors'
 Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
-Plug 'othree/xml'
-" Plug 'valloric/youcompleteme'
+Plug 'othree/xml.vim'
 call plug#end()
