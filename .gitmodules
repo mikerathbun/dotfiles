@@ -7,3 +7,6 @@
 [submodule "ruby-build"]
 	path = link/.rbenv/plugins/ruby-build
 	url = https://github.com/rbenv/ruby-build
+[submodule "link/.tmux/plugins/tpm"]
+	path = link/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
