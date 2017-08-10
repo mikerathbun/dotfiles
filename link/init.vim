@@ -200,7 +200,8 @@ endif
 
 if has('nvim')
     " Enable deoplete on startup
-    let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_at_startup = 1
+  nmap <leader>d :call deoplete#toggle()<cr>
 endif
 
 " This is the setup for vim-go
@@ -271,14 +272,14 @@ map <leader>n :NERDTreeToggle<CR>
 autocmd vimrc StdinReadPre * let s:std_in=1
 " If no file or directory arguments are specified, open NERDtree.
 " If a directory is specified as the only argument, open it in NERDTree.
-autocmd vimrc VimEnter *
-  \ if argc() == 0 && !exists("s:std_in") |
-  \   NERDTree |
-  \ elseif argc() == 1 && isdirectory(argv(0)) |
-  \   bd |
-  \   exec 'cd' fnameescape(argv(0)) |
-  \   NERDTree |
-  \ end
+" autocmd vimrc VimEnter *
+"   \ if argc() == 0 && !exists("s:std_in") |
+"   \   NERDTree |
+"   \ elseif argc() == 1 && isdirectory(argv(0)) |
+"   \   bd |
+"   \   exec 'cd' fnameescape(argv(0)) |
+"   \   NERDTree |
+"   \ end
 
 " Signify
 let g:signify_vcs_list = ['git', 'hg', 'svn']
