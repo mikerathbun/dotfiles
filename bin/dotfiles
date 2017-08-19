@@ -11,10 +11,6 @@ Usage: $(basename "$0")
 See the README for documentation.
 https://github.com/mikerathbun/dotfiles
 
-Copyright (c) 2014 "Cowboy" Ben Alman
-Licensed under the MIT license.
-http://benalman.com/about/license/
-Updated by Mike
 HELP
 exit; fi
 
@@ -291,7 +287,7 @@ if [[ ! -d $DOTFILES ]]; then
   new_dotfiles_install=1
   prompt_delay=15
   e_header "Downloading dotfiles"
-  git clone --recursive git://github.com/mikerathbun/dotfiles.git $DOTFILES
+  git clone --recursive https://github.com/mikerathbun/dotfiles.git $DOTFILES
   cd $DOTFILES
 elif [[ "$1" != "restart" ]]; then
   # Make sure we have the latest files.
