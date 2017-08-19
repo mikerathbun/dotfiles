@@ -8,9 +8,9 @@
 /link/.ssh/*.pem
 /link/.ssh/known_hosts
 
-# Don't commit Vim plugins, vim-plug will install them.
-/link/.vim/plugged
-/link/.vim/autoload/plug.vim.old
+# Don't commit nvim plug.vim and the colors since we will load them in the init script
+/link/.config/nvim/autoload
+/link/.config/nvim/colors
 
 # Do not track anaconda installed files.
 /vendor/anaconda3
