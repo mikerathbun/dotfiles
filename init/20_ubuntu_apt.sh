@@ -19,6 +19,9 @@ packages=(
   telnet
   python-pip
   python3-pip
+  python3-dev
+  python-software-properties
+  python-dev
   tree
   unzip
   neovim
