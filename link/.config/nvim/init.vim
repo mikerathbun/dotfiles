@@ -29,9 +29,14 @@ autocmd vimrc ColorScheme * :hi Visual guibg=#00588A
 autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
 autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
-let g:molokai_italic=0
+" colorscheme settings
 colorscheme molokai
-set background=dark
+" set background=dark
+" set the background to be a little more brown
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+
+
 
 " Visual settings
 set cursorline " Highlight current line
