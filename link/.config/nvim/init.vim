@@ -202,11 +202,6 @@ if !exists("*SourceConfigs")
   endfunction
 endif
 
-if has('nvim')
-    " Enable deoplete on startup
-  let g:deoplete#enable_at_startup = 1
-  nmap <leader>d :call deoplete#toggle()<cr>
-endif
 
 " This is the setup for vim-go
 syntax enable
@@ -301,7 +296,11 @@ let g:indent_guides_guide_size = 1
 let g:mustache_abbreviations = 1
 
 " deoplete settings
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
+
+if has('nvim')
+  nmap <leader>d :call deoplete#toggle()<cr>
+endif
 
 " Fugitive
 nnoremap <Leader>gs :Gstatus<CR>

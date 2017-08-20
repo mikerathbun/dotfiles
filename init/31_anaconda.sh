@@ -16,4 +16,6 @@ cd /tmp
 wget "$downloadAddress$anacondaFileName"
 bash $anacondaFileName -b -p $installDirectory
 
+# This will hopefully delete it.
+rm /tmp/anacondaFileName
 
