@@ -252,8 +252,10 @@ autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
 " markdown
 autocmd vimrc BufRead,BufNewFile *.md set filetype=markdown
 
-
 " PLUGINS
+
+" Python
+let g:pymode_python = 'python3'
 
 " Airline
 let g:airline_powerline_fonts = 1 " TODO: detect this?
