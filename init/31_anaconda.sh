@@ -2,7 +2,7 @@
 
 
 # Install the Anaconda Python distribution
-version="4.4.0"
+version="5.0.1"
 anacondaFileName="Anaconda3-$version-Linux-x86_64.sh"
 downloadAddress="https://repo.continuum.io/archive/"
 installDirectory="$DOTFILES/vendor/anaconda3/"
