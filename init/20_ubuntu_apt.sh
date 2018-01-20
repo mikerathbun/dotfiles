@@ -25,7 +25,7 @@ packages=(
   tree
   unzip
   neovim
-
+  html-xml-utils
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))
