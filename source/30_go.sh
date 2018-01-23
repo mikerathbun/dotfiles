@@ -1,7 +1,7 @@
 # Sets up the Go paths
 export PATH
 
-PATH=$PATH:/usr/local/go/bin
+PATH=$PATH:/usr/lib/go-1.9/bin
 
 export GOPATH=/vagrant_dev/go/
 

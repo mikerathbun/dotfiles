@@ -245,7 +245,6 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>r <Plug>(go-run)
 set autowrite
 "" FILE TYPES
-
 " vim
 autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
 
