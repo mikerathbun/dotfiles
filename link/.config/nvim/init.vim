@@ -296,6 +296,8 @@ let g:indent_guides_guide_size = 1
 " Mustache/handlebars
 let g:mustache_abbreviations = 1
 
+" VimCompletesMe
+let b:vcm_tab_complete = ''
 " deoplete settings
 let g:deoplete#enable_at_startup = 0
 
@@ -348,4 +350,5 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
 Plug 'othree/xml.vim'
+Plug 'ajh17/CimCompletesMe'
 call plug#end()
