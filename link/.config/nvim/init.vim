@@ -204,6 +204,14 @@ endif
 
 
 " This is the setup for vim-go
+""""""""""""""""""""""""""""""
+"
+"
+"       Vim-GO
+"
+""""""""""""""""""""""""""""""
+
+set autowrite
 syntax enable
 filetype plugin on
 let g:go_disable_autoinstall = 0
@@ -232,18 +240,27 @@ let g:ale_sign_warning = '⚠'
 " Enable integration with airline
 let g:airline#extensions#ale#enabled = 1
 
+au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>r <Plug>(go-run)
 
-" This is for searching for functions within packages
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
 au FileType go nmap <leader>ga <Plug>(go-alternate-edit)
 au FileType go nmap <leader>gah <Plug>(go-alternate-split)
 au FileType go nmap <leader>gav <Plug>(go-alternate-vertical)
-au FileType go nmap <F10> :GoTest -show<cr>
-au FileType go nmap <F9> :GoCoverageToggle -short<cr>
-au FileType go nmap <F12> <Plug>(go-def)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>r <Plug>(go-run)
-set autowrite
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
 "" FILE TYPES
 " vim
 autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
@@ -332,6 +349,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
+Plug 'vphantom/vim-obsession'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -350,5 +368,5 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
 Plug 'othree/xml.vim'
-Plug 'ajh17/CimCompletesMe'
+Plug 'ajh17/VimCompletesMe'
 call plug#end()
