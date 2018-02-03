@@ -59,5 +59,3 @@
   insteadOf = "heroku:"
 [push]
 	default = simple
-[url "https://"]
-	insteadOf = git://
