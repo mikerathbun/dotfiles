@@ -214,7 +214,44 @@ endif
 set autowrite
 syntax enable
 filetype plugin on
-let g:go_disable_autoinstall = 0
+
+
+"----------------------------------------------
+" Language: Golang
+"----------------------------------------------
+au FileType go set noexpandtab
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
+
+
+"----------------------------------------------
+" Plugin: zchee/deoplete-go
+"----------------------------------------------
+" Enable completing of go pointers
+let g:deoplete#sources#go#pointer = 1
+
+au FileType go nmap <F8> :GoMetaLinter<cr>
+au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>gd <Plug>(go-def)
+
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
+au FileType go nmap <leader>ga <Plug>(go-alternate-edit)
+au FileType go nmap <leader>gah <Plug>(go-alternate-split)
+au FileType go nmap <leader>gav <Plug>(go-alternate-vertical)
+
+au FileType go nmap <leader>gdv <Plug>(go-def-vertical)
+au FileType go nmap <leader>gdh <Plug>(go-def-split)
+au FileType go nmap <leader>gD <Plug>(go-doc)
+au FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
+
+" Auto import of dependencies
+let g:go_fmt_command = "goimports"
+
+let g:go_snippet_engine = "neosnippet"
 
 " Highlight
 let g:go_highlight_functions = 1
@@ -225,12 +262,15 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_auto_sameids = 0
 let g:go_auto_type_info = 1
+
+" Show the progress when running :GoCoverage
+let g:go_echo_command_info = 1
+
 let g:go_list_type = "quickfix"
+let g:go_disable_autoinstall = 0
 
-" Auto import of dependencies
-let g:go_fmt_command = "goimports"
-
-let g:go_snippet_engine = "neosnippet"
+" Add the failing test name to the output of :GoTest
+let g:go_test_prepend_name = 1
 
 " Linting
 " Error and warning signs
@@ -240,15 +280,7 @@ let g:ale_sign_warning = '⚠'
 " Enable integration with airline
 let g:airline#extensions#ale#enabled = 1
 
-au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>r <Plug>(go-run)
 
-au FileType go nmap <leader>gt :GoDeclsDir<cr>
-au FileType go nmap <leader>ga <Plug>(go-alternate-edit)
-au FileType go nmap <leader>gah <Plug>(go-alternate-split)
-au FileType go nmap <leader>gav <Plug>(go-alternate-vertical)
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
   let l:file = expand('%')
@@ -261,7 +293,52 @@ endfunction
 
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
-"" FILE TYPES
+" gometalinter configuration
+let g:go_metalinter_command = ""
+let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_enabled = [
+    \ 'deadcode',
+    \ 'errcheck',
+    \ 'gas',
+    \ 'goconst',
+    \ 'gocyclo',
+    \ 'golint',
+    \ 'gosimple',
+    \ 'ineffassign',
+    \ 'vet',
+    \ 'vetshadow'
+\]
+
+" Set whether the JSON tags should be snakecase or camelcase.
+let g:go_addtags_transform = "snakecase"
+
+" neomake configuration for Go.
+let g:neomake_go_enabled_makers = [ 'go', 'gometalinter' ]
+let g:neomake_go_gometalinter_maker = {
+  \ 'args': [
+  \   '--tests',
+  \   '--enable-gc',
+  \   '--concurrency=3',
+  \   '--fast',
+  \   '-D', 'aligncheck',
+  \   '-D', 'dupl',
+  \   '-D', 'gocyclo',
+  \   '-D', 'gotype',
+  \   '-E', 'errcheck',
+  \   '-E', 'misspell',
+  \   '-E', 'unused',
+  \   '%:p:h',
+  \ ],
+  \ 'append_file': 0,
+  \ 'errorformat':
+  \   '%E%f:%l:%c:%trror: %m,' .
+  \   '%W%f:%l:%c:%tarning: %m,' .
+  \   '%E%f:%l::%trror: %m,' .
+  \   '%W%f:%l::%tarning: %m'
+  \ }
+
+
+
 " vim
 autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
 
@@ -323,14 +400,16 @@ if has('nvim')
 endif
 
 " Fugitive
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gp :Gpull<CR>
-nnoremap <leader>gP :Gpush<CR>
-nnoremap <leader>gc :Gcommit -a<CR>
+" nnoremap <Leader>gs :Gstatus<CR>
+" nnoremap <Leader>gd :Gdiff<CR>
+" nnoremap <Leader>gp :Gpull<CR>
+" nnoremap <leader>gP :Gpush<CR>
+" nnoremap <leader>gc :Gcommit -a<CR>
 
 " Neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_or_jump)
 " Vim-Indent-guides
 " colorscheme bclear
 set ts=1 sw=2 et
@@ -341,6 +420,15 @@ let g:indent_guides_start_level = 2
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
+" Dependencies
+Plug 'Shougo/neocomplcache'        " Depenency for Shougo/neosnippet
+Plug 'godlygeek/tabular'           " This must come before plasticboy/vim-markdown
+Plug 'tpope/vim-rhubarb'           " Depenency for tpope/fugitive
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
+
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -363,10 +451,10 @@ Plug 'klen/python-mode', {'for': 'python'}
 Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
+" vim-go plugins and support
+
 Plug 'fatih/vim-go'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
 Plug 'othree/xml.vim'
 Plug 'ajh17/VimCompletesMe'
+Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 call plug#end()
