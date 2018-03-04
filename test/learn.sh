@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
-printf "Hello, $USER.\n\n"
 
-printf "Today's date is `date`, this week `date +"%V"`.\n\n"
+if [[ $MYENV == "linode" ]]; then
+  printf "it is $MYENV\n"
+fi
 
-
-
-printf "Uptime is:\n"
-uptime
-printf "\n"
-
-printf "End***"
-
+# echo "New uptime is$(uptime)"
