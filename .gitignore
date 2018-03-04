@@ -12,9 +12,14 @@
 /link/.config/nvim/autoload
 /link/.config/nvim/colors
 
+# Do not commit (n)vim plugged files.
+/link/.vim/plugged/
+/link/.nvim/plugged/
 # Do not track anaconda installed files.
 /vendor/anaconda3
 
+# Don't do anything with Joplin
+link/.config/jop*
 
 
 # Don't commit rbenv temp files.
