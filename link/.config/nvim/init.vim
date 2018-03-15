@@ -236,6 +236,7 @@ au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>rr <Plug>(go-run-split)
 au FileType go nmap <leader>gd <Plug>(go-def)
 
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
