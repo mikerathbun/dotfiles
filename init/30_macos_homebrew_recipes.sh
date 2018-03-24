@@ -27,7 +27,6 @@ recipes=(
 #  man2html
 #  mercurial
   nmap
-  nvm
   postgresql
 #  reattach-to-user-namespace
 #  sl

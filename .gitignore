@@ -18,6 +18,8 @@
 # Do not track anaconda installed files.
 /vendor/anaconda3
 
+# NVM contains git submodules we don't need
+/link/.nvm
 # Don't do anything with Joplin
 link/.config/jop*
 
