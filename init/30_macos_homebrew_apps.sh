@@ -59,6 +59,7 @@ casks=(
   vagrant
   vimr
   virtualbox
+  visual-studio-code
   vlc
 #  ynab
 
