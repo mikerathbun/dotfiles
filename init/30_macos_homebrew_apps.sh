@@ -21,6 +21,7 @@ casks=(
 #  a-better-finder-rename
 #  alfred
 #  android-platform-tools
+  airserver
 #  bartender
 #  battle-net
 #  bettertouchtool
@@ -56,6 +57,7 @@ casks=(
 #  totalfinder
 #  tower
   vagrant
+  vimr
   virtualbox
   vlc
 #  ynab
@@ -84,6 +86,10 @@ casks=(
   font-m-plus
   font-mplus-nerd-font
   font-mplus-nerd-font-mono
+  font-inconsolata-for-powerline
+  font-inconsolata-g-for-powerline
+  font-inconsolata-dz-for-powerline
+  font-source-code-pro-for-powerline
 )
 
 # Install Homebrew casks.

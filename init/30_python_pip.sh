@@ -11,6 +11,7 @@ pip_packages=(
   netifaces
   powerline-status
   neovim
+  psutil
 )
 
 installed_pip_packages="$(pip list 2>/dev/null | awk '{print $1}')"
