@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 [[ "$1" == "source" ]] || \
 
-echo 'Dotfiles - Forked from Ben Alman - http://benalman.com/'
-echo 'Running from https://github.com/mikerathbun/dotfiles'
+# echo 'Dotfiles - Forked from Ben Alman - http://benalman.com/'
+# echo 'Running from https://github.com/mikerathbun/dotfiles'
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 

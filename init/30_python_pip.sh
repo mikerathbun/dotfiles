@@ -9,7 +9,10 @@ pip install --upgrade pip
 # Add pip packages
 pip_packages=(
   netifaces
+  powerline-docker
+  powerline-gitstatus
   powerline-status
+  powerline-shell
   neovim
   psutil
 )
