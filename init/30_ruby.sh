@@ -1,3 +1,5 @@
+# We will use brew for macOS
+is_ubuntu || return 1
 # Install rbenv and everything needed for
 # Ruby development
 

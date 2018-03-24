@@ -4,8 +4,7 @@ export PATH
 if [[ $MYENV == "linode" ]]; then
   export PATH=$PATH:/usr/local/go/bin
   export GOPATH=~/dev_files/go
-elif [[ $MYENV == "mac" ]]; then
-  echo "****** You need to set up the 30_go.sh file for mac"
+elif [[ $MYENV == "macos" ]]; then
   export PATH=$PATH:/usr/local/go/bin
   export GOPATH=~/Documents/dev/go
 else

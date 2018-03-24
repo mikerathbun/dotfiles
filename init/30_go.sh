@@ -1,5 +1,6 @@
 # Install the Go programming language
-
+# macOS will use brew
+is_ubuntu || return 1
 # Install needed packages
 e_header "Installing Go"
 

@@ -1,3 +1,5 @@
+is_ubuntu || return 1
+
 # Install Docker
 
 e_header "Installing Docker"

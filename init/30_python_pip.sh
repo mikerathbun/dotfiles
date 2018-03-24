@@ -1,4 +1,6 @@
 # Exit if pip is not installed.
+# We will use brew on macOS
+is_ubuntu || return 1
 [[ ! "$(type -P pip)" ]] && e_error "Pip needs to be installed." && return 1
 # we need to update pip for some reason
 pip3 install --upgrade pip
