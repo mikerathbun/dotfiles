@@ -9,29 +9,39 @@ recipes=(
 #  ansible
 #  awscli
 #  bash
+  cheatsheet
 #  cmatrix
   coreutils
 #  cowsay
+  dash
+  gpg-suite
   git
   git-extras
+  handbrake
   htop
   hub
+  iina
 #  id3tool
   jq
 #  lesspipe
 #  man2html
 #  mercurial
   nmap
+  nvm
   postgresql
 #  reattach-to-user-namespace
 #  sl
 #  ssh-copy-id
+  snagit
   terminal-notifier
+  textmate
 #  the_silver_searcher
 #  thefuck
   tmux
+  torbrowser
 #  tmux-xpanes
   tree
+  vyprvpn
   wget
 )
 

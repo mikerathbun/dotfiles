@@ -57,6 +57,7 @@ casks=(
 #  tower
   vagrant
   virtualbox
+  visual-studio-code
   vlc
 #  ynab
 
