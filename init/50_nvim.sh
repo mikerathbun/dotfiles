@@ -1,4 +1,4 @@
-is_ubuntu || return 1
+# is_ubuntu || return 1
 
 # Backups, swaps and undos are stored here.
 mkdir -p $DOTFILES/caches/nvim

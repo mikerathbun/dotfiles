@@ -29,17 +29,18 @@ casks=(
 #  chronosync
 #  controllermate
   docker
-#  dropbox
+  dropbox
 #  fastscripts
 #  firefox
 #  gyazo
 #  hex-fiend
-#  iterm2
+  iterm2
 #  karabiner-elements
 #  macvim
 #  messenger-for-desktop
 #  midi-monitor
 #  moom
+  neovim
 #  omnidisksweeper
 #  race-for-the-galaxy
 #  reaper
