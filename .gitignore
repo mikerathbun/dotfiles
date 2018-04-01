@@ -12,6 +12,9 @@
 /link/.config/nvim/autoload
 /link/.config/nvim/colors
 
+# Ignore certain npm config files
+update-notifier-npm.json
+
 # Do not commit (n)vim plugged files.
 /link/.vim/plugged/
 /link/.nvim/plugged/

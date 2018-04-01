@@ -8,7 +8,7 @@ is_osx || return 1
 recipes=(
 #  ansible
 #  awscli
-#  bash
+  bash-completion
   cheatsheet
 #  cmatrix
   coreutils

@@ -14,7 +14,12 @@ export LESS=-XR
 function titlebar() {
   echo -n $'\e]0;'"$*"$'\a'
 }
-
+if [[ $MYENV == "macos" ]]; then
+  # completions for macOS
+  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+  # set up iTerm2 to use chell integration
+  test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+fi
 # SSH auto-completion based on entries in known_hosts.
 if [[ -e ~/.ssh/known_hosts ]]; then
   complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp sftp

@@ -122,7 +122,8 @@ set smartcase " Ignore 'ignorecase' if search pattern contains uppercase charact
 
 " Clear last search TODO: Find a replacement
 nnoremap <silent><leader><space> :nohlsearch<CR>
-
+" When in the terminal, we want to pause it using <Esc>
+tnoremap <Esc> <C-\><C-n>
 " Ignore things
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
 set wildignore+=*/bower_components/*,*/node_modules/*
