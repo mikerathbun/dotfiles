@@ -349,6 +349,14 @@ autocmd vimrc BufRead,BufNewFile *.md set filetype=markdown
 
 " PLUGINS
 
+" Javascript using pangloss/vim-javascript
+" syntax highlighting for JSDocs
+let g:javascript_plugin_jsdoc = 1
+" Enables syntax for Flow
+let g:javascript_plugin_flow = 1
+
+
+
 " Python
 let g:pymode_python = 'python3'
 
@@ -437,7 +445,6 @@ Plug 'tpope/vim-rhubarb'           " Depenency for tpope/fugitive
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
-
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -451,7 +458,8 @@ Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
@@ -461,7 +469,6 @@ Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
 " vim-go plugins and support
-
 Plug 'fatih/vim-go'
 Plug 'othree/xml.vim'
 Plug 'ajh17/VimCompletesMe'
