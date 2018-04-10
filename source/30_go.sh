@@ -7,6 +7,9 @@ if [[ $MYENV == "linode" ]]; then
 elif [[ $MYENV == "macos" ]]; then
   export PATH=$PATH:/usr/local/go/bin
   export GOPATH=~/Documents/dev/go
+elif [[ $MYENV == "cloud" ]]; then
+  export PATH=$PATH:/usr/lib/go-1.10/bin
+  export GOPATH=~/dev/go
 else
   echo "****** You need to set the 000_setthisenv.sh"
 fi
