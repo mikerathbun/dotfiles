@@ -1,7 +1,9 @@
 " Change mapleader
 let g:mapleader=","
 inoremap jk <ESC>
-inoremap <leader><CR> <ESC>o
+" Commented out becuase it messes up typing comma at the end of a line and
+" pressing enter.
+" inoremap <leader><CR> <ESC>o
 
 " Local dirs
 if !has('win32')
@@ -147,9 +149,9 @@ nnoremap <C-H> <C-W>h
 
 " Buffer navigation
 " nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
-map <leader><leader> :b#<CR> " Switch between the last two files
-map gb :bnext<CR> " Next buffer
-map gB :bprev<CR> " Prev buffer
+nnoremap <leader><leader> :b#<CR> " Switch between the last two files
+nnoremap gb :bnext<CR> " Next buffer
+nnoremap gB :bprev<CR> " Prev buffer
 
 " Jump to buffer number 1-9 with ,<N> or 1-99 with <N>gb
 let c = 1
@@ -201,6 +203,19 @@ if !exists("*SourceConfigs")
     endif
     echom "Sourced " . files
   endfunction
+endif
+
+
+""""""""""""""""""""""""""""""
+"
+"       Python based commands I came across
+"
+""""""""""""""""""""""""""""""
+if has('python')
+
+  " Format JSON document
+  nnoremap <Leader>j :%!python -m json.tool<CR>
+
 endif
 
 
@@ -389,7 +404,7 @@ autocmd vimrc StdinReadPre * let s:std_in=1
 let g:signify_vcs_list = ['git', 'hg', 'svn']
 
 " CtrlP.vim
-map <leader>p <C-P>
+" map <leader>p <C-P>
 " map <leader>r :CtrlPMRUFiles<CR>
 "let g:ctrlp_match_window_bottom = 0 " Show at top of window
 
@@ -406,7 +421,7 @@ let b:vcm_tab_complete = ''
 let g:deoplete#enable_at_startup = 0
 
 if has('nvim')
-  nmap <leader>d :call deoplete#toggle()<cr>
+  nnoremap <leader>d :call deoplete#toggle()<cr>
 endif
 
 " Fugitive
@@ -453,6 +468,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-jdaddy'
 Plug 'vphantom/vim-obsession'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
