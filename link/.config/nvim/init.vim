@@ -1,3 +1,46 @@
+" http://vim.wikia.com/wiki/Working_with_Unicode
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""
+"
+"       Examples and definitions of maps
+"       http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
+"       ---------------------------------
+"       To see a list of existing maps
+"       :map displays the maps that work in normal, visual and select and operator pending mode
+"       :map! maps that work in insert and command-line mode.
+"       :nmap - Display normal mode maps
+"       :imap - Display insert mode maps.
+"       :vmap - Display visual and select mode maps.
+"       :smap - Display select mode maps
+"       :xmap - Display visual mode maps.
+"
+"       :nmap g - Display
+"
+"       :unmap <F8>
+"       To disable a key map defined by a plugin, must be done after the
+"       plugin defines it.
+"       autocmd VimEnter * unmap! <F8>
+"           or
+"       autocmd FileType python unmap! <F8>
+"
+"
+"       inoremap - Remap in insert mode
+"
+"
+""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
 " Change mapleader
 let g:mapleader=","
 inoremap jk <ESC>
