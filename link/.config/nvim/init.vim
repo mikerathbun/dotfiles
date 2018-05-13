@@ -406,6 +406,20 @@ autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
 autocmd vimrc BufRead,BufNewFile *.md set filetype=markdown
 
 " PLUGINS
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"     VimWiki
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimwiki_list = [
+                        \{'path': '$MYDBDEV/vimwiki/tech.wiki'},
+                        \{'path': '$MYDBDEV/vimwiki/personal.wiki'},
+                        \]
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Javascript using pangloss/vim-javascript
 " syntax highlighting for JSDocs
@@ -532,4 +546,5 @@ Plug 'fatih/vim-go'
 Plug 'othree/xml.vim'
 Plug 'ajh17/VimCompletesMe'
 Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
+Plug 'vimwiki/vimwiki'
 call plug#end()
