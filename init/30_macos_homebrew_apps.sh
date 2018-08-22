@@ -21,7 +21,7 @@ casks=(
 #  a-better-finder-rename
 #  alfred
 #  android-platform-tools
-  airserver
+#  airserver
 #  bartender
 #  battle-net
 #  bettertouchtool
@@ -29,13 +29,13 @@ casks=(
 #  chromium
 #  chronosync
 #  controllermate
-  docker
-  dropbox
+#  docker
+#  dropbox
 #  fastscripts
 #  firefox
 #  gyazo
 #  hex-fiend
-  iterm2
+#  iterm2
 #  karabiner-elements
 #  macvim
 #  messenger-for-desktop
@@ -49,7 +49,7 @@ casks=(
 #  screenhero
 #  scroll-reverser
 #  skype
-  slack
+#  slack
   sourcetree
   spotify
 #  steam
@@ -82,7 +82,6 @@ casks=(
 # Drivers
 #  sonos
 #  xbox360-controller-driver
- 
 # Fonts
   font-m-plus
   font-mplus-nerd-font
