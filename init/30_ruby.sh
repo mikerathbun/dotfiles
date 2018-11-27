@@ -33,7 +33,7 @@ fi
 
 # Install ruby
 if [[ "$(type -P rbenv)" ]]; then
-  versions=(2.4.1)
+  versions=(2.5.1)
 
   rubies=($(setdiff "${versions[*]}" "$(rbenv whence ruby)"))
   if (( ${#rubies[@]} > 0 )); then
