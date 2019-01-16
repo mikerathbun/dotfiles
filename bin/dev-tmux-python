@@ -1,7 +1,8 @@
 #!/bin/sh
-tmux new-session -d # Create a new session named but don't attach (-d)
-tmux split-window -v  #Split the window and execute 'top' vertically (-v)
-tmux split-window -h # Split the window horizontally
-# tmux new-window 'top' # Create a new window and execute the command 'top' in it.
+tmux new-session -s 'Software Development' -d  # Create a new session named but don't attach (-d)
+tmux split-window -h
+tmux select-pane -t 0
+tmux split-window -v
+tmux select-pane -t 2
+tmux resize-pane -L 40
 tmux -2 attach-session -d # Attach to the created session  using 256 colors (-2) and detach (-d) any other sessions.
-

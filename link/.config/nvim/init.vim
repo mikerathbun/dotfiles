@@ -429,8 +429,10 @@ let g:javascript_plugin_flow = 1
 
 
 
-" Python
+" Python-mode (pymode)
 let g:pymode_python = 'python3'
+let g:pymode_options_colorcolumn = 1
+let g:pymode_folding = 0
 
 " Airline
 let g:airline_powerline_fonts = 1 " TODO: detect this?
@@ -537,7 +539,7 @@ Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'chase/vim-ansible-yaml'
-Plug 'klen/python-mode', {'for': 'python'}
+Plug 'klen/python-mode', {'branch': 'develop'}
 Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
