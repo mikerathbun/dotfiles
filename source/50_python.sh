@@ -1,1 +1,1 @@
-alias pipenv='~/.local/bin/pipenv'
+# alias pipenv='~/.local/bin/pipenv'
