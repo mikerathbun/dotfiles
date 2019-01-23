@@ -428,11 +428,21 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
 
 
+" python-provider settings
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3.7'
+
 
 " Python-mode (pymode)
 let g:pymode_python = 'python3'
+let g:pymode_options_max_line_length = 90
 let g:pymode_options_colorcolumn = 1
 let g:pymode_folding = 0
+
+" Tab setting for Python
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sts=4
 
 " Airline
 let g:airline_powerline_fonts = 1 " TODO: detect this?
@@ -490,19 +500,33 @@ endif
 " nnoremap <leader>gP :Gpush<CR>
 " nnoremap <leader>gc :Gcommit -a<CR>
 
-" Neosnippet
+"""""""""""""""" Neosnippet config """""""""""""""""""""""
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+""""""""""""""" End Neosnippet """"""""""""""""""""""""""""""
 
 " Vim-Indent-guides
 " colorscheme bclear
+
 set ts=1 sw=2 et
 let g:indent_guides_start_level = 2
 
@@ -517,7 +541,7 @@ Plug 'godlygeek/tabular'           " This must come before plasticboy/vim-markdo
 Plug 'tpope/vim-rhubarb'           " Depenency for tpope/fugitive
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
