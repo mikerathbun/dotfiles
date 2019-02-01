@@ -436,7 +436,7 @@ let g:python3_host_prog = '/usr/bin/python3.7'
 
 " Python-mode (pymode)
 let g:pymode_python = 'python3'
-let g:pymode_options_max_line_length = 90
+let g:pymode_options_max_line_length = 95
 let g:pymode_options_colorcolumn = 1
 let g:pymode_folding = 0
 
