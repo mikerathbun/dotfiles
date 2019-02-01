@@ -427,7 +427,9 @@ let g:javascript_plugin_jsdoc = 1
 " Enables syntax for Flow
 let g:javascript_plugin_flow = 1
 
-
+" py settings
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Python-mode (pymode)
 let g:pymode_python = 'python3'
@@ -484,11 +486,11 @@ if has('nvim')
 endif
 
 " Fugitive
-" nnoremap <Leader>gs :Gstatus<CR>
-" nnoremap <Leader>gd :Gdiff<CR>
-" nnoremap <Leader>gp :Gpull<CR>
-" nnoremap <leader>gP :Gpush<CR>
-" nnoremap <leader>gc :Gcommit -a<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gp :Gpull<CR>
+nnoremap <leader>gP :Gpush<CR>
+nnoremap <leader>gc :Gcommit -a<CR>
 
 " Neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
