@@ -46,7 +46,8 @@ let g:mapleader=","
 inoremap jk <ESC>
 " Commented out becuase it messes up typing comma at the end of a line and
 " pressing enter.
-" inoremap <leader><CR> <ESC>o
+" imap <nl> <ESC>o
+
 
 " Local dirs
 if !has('win32')
@@ -439,6 +440,18 @@ let g:pymode_options_max_line_length = 90
 let g:pymode_options_colorcolumn = 1
 let g:pymode_folding = 0
 
+" Python-mode Rope settings
+let g:pymode_rope = 0
+" Extended autocompletion (rope could complete objects which have not been
+" imported) from project
+let g:pymode_rope_autoimport = 0
+
+" Load modules to autoimport by default
+" let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
+
+" Offer to unresolved import object after completion.
+" let g:pymode_rope_autoimport_import_after_complete = 0
+
 " Tab setting for Python
 autocmd FileType python set sw=4
 autocmd FileType python set ts=4
@@ -494,11 +507,11 @@ if has('nvim')
 endif
 
 " Fugitive
-" nnoremap <Leader>gs :Gstatus<CR>
-" nnoremap <Leader>gd :Gdiff<CR>
-" nnoremap <Leader>gp :Gpull<CR>
-" nnoremap <leader>gP :Gpush<CR>
-" nnoremap <leader>gc :Gcommit -a<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gp :Gpull<CR>
+nnoremap <leader>gP :Gpush<CR>
+nnoremap <leader>gc :Gcommit -a<CR>
 
 """""""""""""""" Neosnippet config """""""""""""""""""""""
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
