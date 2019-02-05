@@ -428,17 +428,14 @@ let g:javascript_plugin_jsdoc = 1
 " Enables syntax for Flow
 let g:javascript_plugin_flow = 1
 
-<<<<<<< HEAD
-" py settings
-let g:python_host_prog = '/usr/local/bin/python2'
+" py settings for iMac
+let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
-=======
 
-" python-provider settings
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3.7'
+" python-provider settings for maybe vagrant_win10
+" let g:python_host_prog = '/usr/bin/python'
+" let g:python3_host_prog = '/usr/bin/python3.7'
 
->>>>>>> 4291ef232eb55977194caf2679938701bc3938c5
 
 " Python-mode (pymode)
 let g:pymode_python = 'python3'
