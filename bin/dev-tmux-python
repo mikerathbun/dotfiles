@@ -1,8 +1,15 @@
 #!/bin/sh
-tmux new-session -s 'Software Development' -d  # Create a new session named but don't attach (-d)
+
+# open the directory for the project I am working on.
+cd /vagrant_dev/python/django/bookmarks
+
+# Create a new session named but don't attach (-d)
+tmux new-session -s 'Software Development' -d
+# create a new horizontal window
 tmux split-window -h
 tmux select-pane -t 0
 tmux split-window -v
 tmux select-pane -t 2
 tmux resize-pane -L 40
-tmux -2 attach-session -d # Attach to the created session  using 256 colors (-2) and detach (-d) any other sessions.
+# Attach to the created session  using 256 colors (-2) and detach (-d) any other sessions.
+tmux -2 attach-session -d
