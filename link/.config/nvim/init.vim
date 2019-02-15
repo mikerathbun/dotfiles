@@ -47,7 +47,7 @@ inoremap jk <ESC>
 " Commented out becuase it messes up typing comma at the end of a line and
 " pressing enter.
 " imap <nl> <ESC>o
-
+inoremap  <ESC>o
 
 
 
