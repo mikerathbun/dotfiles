@@ -46,7 +46,10 @@ let g:mapleader=","
 inoremap jk <ESC>
 " Commented out becuase it messes up typing comma at the end of a line and
 " pressing enter.
-" inoremap <leader><CR> <ESC>o
+" imap <nl> <ESC>o
+inoremap  <ESC>o
+
+
 
 " Local dirs
 if !has('win32')
@@ -427,10 +430,37 @@ let g:javascript_plugin_jsdoc = 1
 " Enables syntax for Flow
 let g:javascript_plugin_flow = 1
 
+" py settings for iMac
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+" python-provider settings for maybe vagrant_win10
+" let g:python_host_prog = '/usr/bin/python'
+" let g:python3_host_prog = '/usr/bin/python3.7'
 
 
-" Python
+" Python-mode (pymode)
 let g:pymode_python = 'python3'
+let g:pymode_options_max_line_length = 95
+let g:pymode_options_colorcolumn = 1
+let g:pymode_folding = 0
+
+" Python-mode Rope settings
+let g:pymode_rope = 0
+" Extended autocompletion (rope could complete objects which have not been
+" imported) from project
+let g:pymode_rope_autoimport = 0
+
+" Load modules to autoimport by default
+" let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
+
+" Offer to unresolved import object after completion.
+" let g:pymode_rope_autoimport_import_after_complete = 0
+
+" Tab setting for Python
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sts=4
 
 " Airline
 let g:airline_powerline_fonts = 1 " TODO: detect this?
@@ -482,25 +512,39 @@ if has('nvim')
 endif
 
 " Fugitive
-" nnoremap <Leader>gs :Gstatus<CR>
-" nnoremap <Leader>gd :Gdiff<CR>
-" nnoremap <Leader>gp :Gpull<CR>
-" nnoremap <leader>gP :Gpush<CR>
-" nnoremap <leader>gc :Gcommit -a<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gp :Gpull<CR>
+nnoremap <leader>gP :Gpush<CR>
+nnoremap <leader>gc :Gcommit -a<CR>
 
-" Neosnippet
+"""""""""""""""" Neosnippet config """""""""""""""""""""""
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+""""""""""""""" End Neosnippet """"""""""""""""""""""""""""""
 
 " Vim-Indent-guides
 " colorscheme bclear
+
 set ts=1 sw=2 et
 let g:indent_guides_start_level = 2
 
@@ -515,7 +559,7 @@ Plug 'godlygeek/tabular'           " This must come before plasticboy/vim-markdo
 Plug 'tpope/vim-rhubarb'           " Depenency for tpope/fugitive
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
@@ -537,7 +581,7 @@ Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'chase/vim-ansible-yaml'
-Plug 'klen/python-mode', {'for': 'python'}
+Plug 'klen/python-mode', {'branch': 'develop'}
 Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'

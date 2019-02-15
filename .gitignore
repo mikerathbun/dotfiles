@@ -45,3 +45,6 @@ link/.config/jop*
 *LOCAL*
 link/.config/.mono/
 link/.config/configstore/
+
+# Ignore test files inside the notrack directory
+test/untracked/*
