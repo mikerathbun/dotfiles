@@ -2,6 +2,8 @@
 /caches/
 /backups/
 
+.DS_STORE
+
 # Top secret stuff!
 /link/.ssh/authorized_keys
 /link/.ssh/id_*
@@ -41,6 +43,8 @@ link/.config/jop*
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
+link/.config/.mono/
+link/.config/configstore/
 
 # Ignore test files inside the notrack directory
 test/untracked/*
