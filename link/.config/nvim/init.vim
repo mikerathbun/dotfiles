@@ -462,6 +462,19 @@ autocmd FileType python set sw=4
 autocmd FileType python set ts=4
 autocmd FileType python set sts=4
 
+
+" Syntastic settings
+"
+" statusline options are taken care of by airline
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1 " in active mode run syntax checks when open and save
+let g:syntastic_check_on_wq = 0 " skip check when quitting
+
+
 " Airline
 let g:airline_powerline_fonts = 1 " TODO: detect this?
 let g:airline#extensions#tabline#enabled = 1
