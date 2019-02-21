@@ -473,6 +473,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1 " in active mode run syntax checks when open and save
 let g:syntastic_check_on_wq = 0 " skip check when quitting
+let g:syntastic_aggregate_errors = 1
+" set Syntastic linting options
 
 
 " Airline
