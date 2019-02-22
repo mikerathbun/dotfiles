@@ -6,7 +6,7 @@ if [[ $MYENV == "macos" ]]; then
 elif [[ $MYENV == "vagrant" ]]; then
   cd /vagrant_dev/python/django/acas_project
 else
-  echo "*** dev-tmux-python -- you need to add a MYENV option *"
+  echo "*** dev-tmux-python -- you need to add a MYENV option **"
 fi
 # Create a new session named but don't attach (-d)
 tmux new-session -s 'Software Development' -d
