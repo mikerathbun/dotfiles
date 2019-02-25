@@ -44,8 +44,10 @@ endif
 " Change mapleader
 let g:mapleader=","
 inoremap jk <ESC>
-
-" Press col-enter in insert mode tomike  goto the next line okay
+" Commented out becuase it messes up typing comma at the end of a line and
+" pressing enter.
+" imap <nl> <ESC>o
+" inoremap  <ESC>o
 
 
 
@@ -198,7 +200,6 @@ nnoremap gb :bnext<CR> " Next buffer
 nnoremap gB :bprev<CR> " Prev buffer
 
 " Jump to buffer number 1-9 with ,<N> or 1-99 with <N>gb
-" #TODO 
 let c = 1
 while c <= 99
   if c < 10
@@ -477,7 +478,7 @@ let g:syntastic_aggregate_errors = 1
 
 
 " Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1 " TODO: detect this?
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_format = '%s '
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -587,6 +588,7 @@ Plug 'tpope/vim-jdaddy'
 Plug 'vphantom/vim-obsession'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
