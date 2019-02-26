@@ -78,11 +78,12 @@ autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
 autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
 " colorscheme settings
+" Trying new colorschemes
 colorscheme molokai
 " set background=dark
 " set the background to be a little more brown
 " let g:molokai_original = 1
-" let g:rehash256 = 1
+let g:rehash256 = 1
 
 
 
@@ -606,4 +607,6 @@ Plug 'othree/xml.vim'
 Plug 'ajh17/VimCompletesMe'
 Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 Plug 'vimwiki/vimwiki'
+" testing colorschemes
+Plug 'flazz/vim-colorschemes'
 call plug#end()

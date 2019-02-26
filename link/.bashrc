@@ -23,7 +23,11 @@ function dotfiles() {
 }
 
 src
+# set CLICOLOR if you want Ansi Colors in iTerm2
+export CLICOLOR=1
 
+# set colors to match iTerm2 Terminal colors
+export TERM=xterm-256color
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
