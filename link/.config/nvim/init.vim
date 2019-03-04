@@ -79,7 +79,7 @@ autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
 " colorscheme settings
 " Trying new colorschemes
-colorscheme molokai
+:colorscheme molokai
 " set background=dark
 " set the background to be a little more brown
 " let g:molokai_original = 1
