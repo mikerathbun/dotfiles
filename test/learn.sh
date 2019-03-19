@@ -1,16 +1,7 @@
 #!/usr/bin/env bash
 
+file=/vagrant_dev/python/django/acas_project/Pipfile.lock
 
-if [[ $MYENV == "macos" ]]; then
-  printf "it is $MYENV\n"
-fi
+echo "${file#*.} is something"
 
-type -P brew
-
-SET1="package-x86 test0 hello world"
-SET2="computer hello sizeof compuler world package-x86 rocks test0"
-SET3=
-
-for arg in $SET2; do
-  case $SET1 in
-    $arg
+echo "${file%.*} is sometyhing"
