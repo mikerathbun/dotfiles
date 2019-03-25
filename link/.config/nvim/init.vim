@@ -478,6 +478,7 @@ let g:syntastic_check_on_open = 1 " in active mode run syntax checks when open a
 let g:syntastic_check_on_wq = 0 " skip check when quitting
 let g:syntastic_aggregate_errors = 1
 " set Syntastic linting options
+let g:pymode_debug = 1
 
 
 " Airline
