@@ -36,7 +36,7 @@ alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 alias eachdir=". eachdir"
 
 # Make grep have color
-alias grep="egrep --color='auto'"
+alias grep="egrep --color='auto' --exclude-dir={backups,.git}"
 # Create a new directory and enter it
 function md() {
   mkdir -p "$@" && cd "$@"
