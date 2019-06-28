@@ -1,10 +1,10 @@
 [user]
-  name = Mike Rathbun
-  email = mikerathbun@me.com
+	name = Mike Rathbun
+	email = mikerathbun@me.com
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-	excludesfile = /Users/mikerathbun/.gitignore_global
+	excludesfile = /Users/mike/.gitignore_global
 [apply]
   whitespace = fix
 [alias]
@@ -63,10 +63,12 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/dev/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [url "https://"]
 	insteadOf = git://
 [http]
 	sslCAinfo = /etc/ssl/certs/ca-certificates.crt
 	sslVerify = false
+[commit]
+	template = /Users/mike/.stCommitMsg
