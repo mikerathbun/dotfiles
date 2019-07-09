@@ -37,6 +37,7 @@ link/.config/jop*
 # Ignore the tmux plugins since tmp will install them
 /link/.tmux/plugins
 
+
 # Ignore changes to 000_setthisenv.sh. For now this is used to set an environmental variable which is used in scripts.
 # We don't want this being changed after it was set.
 /source/000_setthisenv.sh
