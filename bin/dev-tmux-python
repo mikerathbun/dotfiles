@@ -2,7 +2,7 @@
 
 # open the directory for the project I am working on.
 if [[ $MYENV == "macos" ]]; then
-  cd ~/Documents/dev/python/django/acas_project
+  cd ~/Projects/dev/python/django/acas_project
 elif [[ $MYENV == "vagrant" ]]; then
   cd /vagrant_dev/python/django/acas_project
 else
