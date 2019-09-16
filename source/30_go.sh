@@ -5,8 +5,8 @@ if [[ $MYENV == "linode" ]]; then
   export PATH=$PATH:/usr/local/go/bin
   export GOPATH=~/dev_files/go
 elif [[ $MYENV == "macos" ]]; then
-  export PATH=$PATH:/usr/local/go/bin
-  export GOPATH=~/Documents/dev/go
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOPATH/bin
 elif [[ $MYENV == "cloud" ]]; then
   export PATH=$PATH:/usr/lib/go-1.10/bin
   export GOPATH=~/dev/go
