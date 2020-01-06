@@ -14,3 +14,4 @@ fi
 if [[ $MYENV == "vagrant" ]]; then
   alias cdp='cd /vagrant_dev/python/django/acas_project/'
 fi
+export acas=$HOME/Projects/python/django/acas_project/

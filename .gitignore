@@ -51,3 +51,5 @@ link/.config/configstore/
 test/untracked/*
 link/.config/Line\ 6/Line\ 6\ Updater.ini
 Amazon/
+*datacamp_classes*
+
