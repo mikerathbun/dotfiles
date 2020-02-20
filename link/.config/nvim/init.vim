@@ -604,6 +604,7 @@ Plug 'klen/python-mode', {'branch': 'develop'}
 Plug 'mtth/scratch.vim'
 Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
+Plug 'prettier/vim-prettier'
 " vim-go plugins and support
 Plug 'fatih/vim-go'
 Plug 'othree/xml.vim'
