@@ -15,3 +15,6 @@ if [[ $MYENV == "vagrant" ]]; then
   alias cdp='cd /vagrant_dev/python/django/acas_project/'
 fi
 export acas=$HOME/Projects/python/django/acas_project/
+
+# Disable warning of change to zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
