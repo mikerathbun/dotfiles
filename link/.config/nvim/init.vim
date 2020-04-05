@@ -494,6 +494,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
 map <leader>n :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFocus<CR>
 autocmd vimrc StdinReadPre * let s:std_in=1
 " If no file or directory arguments are specified, open NERDtree.
 " If a directory is specified as the only argument, open it in NERDTree.
