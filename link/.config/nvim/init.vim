@@ -426,7 +426,20 @@ let g:vimwiki_list = [
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"     vim-notes
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
+let g:notes_directories = ['~/Projects/vim-notes']
+
+
+
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
 " Javascript using pangloss/vim-javascript
 " syntax highlighting for JSDocs
 let g:javascript_plugin_jsdoc = 1
@@ -613,4 +626,6 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 Plug 'vimwiki/vimwiki'
 " testing colorschemes
 Plug 'flazz/vim-colorschemes'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
 call plug#end()
