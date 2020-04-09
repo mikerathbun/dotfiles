@@ -16,7 +16,9 @@ function titlebar() {
 }
 if [[ $MYENV == "macos" ]]; then
   # completions for macOS
-  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+  # [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+ [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
   # set up iTerm2 to use chell integration
   test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 fi
