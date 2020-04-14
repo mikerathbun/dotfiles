@@ -79,7 +79,8 @@ autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
 " colorscheme settings
 " Trying new colorschemes
-:colorscheme molokai
+" :colorscheme molokai
+:colorscheme github
 " :colorscheme space-vim-dark
 " :colorscheme 256-jungle
 " set background=dark
@@ -627,6 +628,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 Plug 'vimwiki/vimwiki'
 " testing colorschemes
 Plug 'flazz/vim-colorschemes'
+Plug 'felixhummel/setcolors.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 call plug#end()
