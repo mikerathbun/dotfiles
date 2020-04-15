@@ -628,6 +628,7 @@ Plug 'vimwiki/vimwiki'
 " testing colorschemes
 " Plug 'flazz/vim-colorschemes'
 " Plug 'felixhummel/setcolors.vim'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 call plug#end()
