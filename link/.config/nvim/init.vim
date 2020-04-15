@@ -89,7 +89,6 @@ autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 let g:rehash256 = 1
 
 
-
 " Visual settings
 set cursorline " Highlight current line
 set number " Enable line numbers.
@@ -627,8 +626,8 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 Plug 'vimwiki/vimwiki'
 " testing colorschemes
-Plug 'flazz/vim-colorschemes'
-Plug 'felixhummel/setcolors.vim'
+" Plug 'flazz/vim-colorschemes'
+" Plug 'felixhummel/setcolors.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 call plug#end()
