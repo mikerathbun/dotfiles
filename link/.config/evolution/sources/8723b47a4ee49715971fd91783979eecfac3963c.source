@@ -1,0 +1,15 @@
+[Data Source]
+DisplayName=06/16/2021
+Enabled=true
+Parent=local-stub
+
+[Task List]
+BackendName=local
+Color=#becedd
+Selected=true
+
+[Offline]
+StaySynchronized=true
+
+[GNOME To Do]
+ApiVersion=1

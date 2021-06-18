@@ -1,0 +1,44 @@
+[Data Source]
+DisplayName=mike.rathbun@anavationllc.com
+Enabled=true
+Parent=
+
+[Authentication]
+Host=
+Method=OAuth2
+Port=0
+ProxyUid=system-proxy
+RememberPassword=true
+User=
+CredentialName=
+IsExternal=true
+
+[Collection]
+BackendName=google
+CalendarEnabled=true
+ContactsEnabled=true
+Identity=mike.rathbun@anavationllc.com
+MailEnabled=true
+AllowSourcesRename=false
+CalendarUrl=
+ContactsUrl=
+
+[GNOME Online Accounts]
+AccountId=account_1623877143_0
+CalendarUrl=https://apidata.googleusercontent.com/caldav/v2/mike.rathbun@anavationllc.com/user
+ContactsUrl=https://www.googleapis.com/.well-known/carddav
+Name=
+Address=mike.rathbun@anavationllc.com
+
+[WebDAV Backend]
+AvoidIfmatch=false
+CalendarAutoSchedule=false
+Color=
+DisplayName=
+EmailAddress=
+ResourcePath=
+ResourceQuery=
+SslTrust=
+
+[Security]
+Method=none

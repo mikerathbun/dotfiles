@@ -1,0 +1,15 @@
+[Data Source]
+DisplayName=Software
+Enabled=true
+Parent=local-stub
+
+[Task List]
+BackendName=local
+Color=rgb(199,235,164)
+Selected=true
+
+[Offline]
+StaySynchronized=true
+
+[GNOME To Do]
+ApiVersion=1

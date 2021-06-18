@@ -1,0 +1,29 @@
+[Data Source]
+DisplayName=mike.rathbun@anavationllc.com
+Enabled=true
+Parent=cd3303acb18dbf3eb531d32b8b6851f63e206f09
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=139bb475fc1591d524644e1ba927a7ad27fff8fe
+RepliesToOriginFolder=false
+UseSentFolder=true
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://local/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=
+StartBottom=inconsistent
+TopSignature=inconsistent
+Language=
+
+[Mail Identity]
+Address=mike.rathbun@anavationllc.com
+Aliases=
+Name=
+Organization=
+ReplyTo=
+SignatureUid=none

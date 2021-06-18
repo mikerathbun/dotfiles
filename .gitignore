@@ -11,9 +11,8 @@
 /link/.ssh/known_hosts
 
 # Don't commit nvim plug.vim and the colors since we will load them in the init script
-# /link/.config/nvim/autoload
-# /link/.config/nvim/colors
-/link/.config
+/link/.config/nvim/autoload
+/link/.config/nvim/colors
 
 # Ignore certain npm config files
 update-notifier-npm.json
@@ -21,17 +20,16 @@ update-notifier-npm.json
 # Do not commit (n)vim plugged files.
 /link/.vim/plugged/
 /link/.nvim/plugged/
-# Do not track anaconda installed files.
-/vendor/anaconda3
 
-# NVM contains git submodules we don't need
-/link/.nvm
-
-
-# Don't commit rbenv temp files.
-/link/.rbenv/shims/
-/link/.rbenv/versions/
-/link/.rbenv/version
+/link/.config/Slack
+/link/.config/GIMP
+/link/.config/google-chrome
+/link/.config/gnome*
+/link/.config/monitors*
+/link/.config/gtk*
+/link/.config/pulse
+/link/.config/user-dirs*
+/link/.config/totem
 
 # Ignore the tmux plugins since tmp will install them
 /link/.tmux/plugins
