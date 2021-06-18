@@ -11,8 +11,9 @@
 /link/.ssh/known_hosts
 
 # Don't commit nvim plug.vim and the colors since we will load them in the init script
-/link/.config/nvim/autoload
-/link/.config/nvim/colors
+# /link/.config/nvim/autoload
+# /link/.config/nvim/colors
+/link/.config
 
 # Ignore certain npm config files
 update-notifier-npm.json
@@ -25,8 +26,6 @@ update-notifier-npm.json
 
 # NVM contains git submodules we don't need
 /link/.nvm
-# Don't do anything with Joplin
-link/.config/jop*
 
 
 # Don't commit rbenv temp files.
@@ -37,6 +36,8 @@ link/.config/jop*
 # Ignore the tmux plugins since tmp will install them
 /link/.tmux/plugins
 
+# Ignore local tmux resurrect files
+tmux_resurrect*
 
 # Ignore changes to 000_setthisenv.sh. For now this is used to set an environmental variable which is used in scripts.
 # We don't want this being changed after it was set.
@@ -44,12 +45,7 @@ link/.config/jop*
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
-link/.config/.mono/
-link/.config/configstore/
+# link/.config/.mono/
 
 # Ignore test files inside the notrack directory
 test/untracked/*
-link/.config/Line\ 6/Line\ 6\ Updater.ini
-Amazon/
-*datacamp_classes*
-

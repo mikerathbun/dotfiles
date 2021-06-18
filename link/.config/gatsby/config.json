@@ -1,9 +1,0 @@
-{
-	"telemetry": {
-		"enabled": true,
-		"machineId": "3feecacc-94fa-4440-bbc6-42f3832f3d70"
-	},
-	"cli": {
-		"packageManager": "yarn"
-	}
-}

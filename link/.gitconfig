@@ -1,10 +1,10 @@
 [user]
 	name = Mike Rathbun
-	email = mikerathbun@me.com
+	email = mrathbun@1nn0v8.io
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-	excludesfile = /Users/mike/.gitignore_global
+	excludesfile = /home/mike/.gitignore_global
 [apply]
   whitespace = fix
 [alias]
@@ -59,16 +59,6 @@
   insteadOf = "heroku:"
 [push]
 	default = simple
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[url "https://"]
-	insteadOf = git://
 [http]
 	sslCAinfo = /etc/ssl/certs/ca-certificates.crt
 	sslVerify = false
-[commit]
-	template = /Users/mike/.stCommitMsg

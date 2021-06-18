@@ -13,7 +13,6 @@ packages=(
   git
   git-core
   git-extras
-  htop
   libssl-dev
   nmap
   telnet

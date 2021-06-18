@@ -50,6 +50,11 @@ inoremap jk <ESC>
 " inoremap  <ESC>o
 
 
+" Create vimrc autocmd group and remove any existing vimrc autocmds,
+" in case .vimrc is re-sourced.
+augroup vimrc
+  autocmd!
+augroup END
 
 " Local dirs
 if !has('win32')
@@ -59,14 +64,27 @@ if !has('win32')
   let g:netrw_home = expand('$DOTFILES/caches/nvim')
 endif
 
-" Create vimrc autocmd group and remove any existing vimrc autocmds,
-" in case .vimrc is re-sourced.
-augroup vimrc
-  autocmd!
-augroup END
+set guicursor=n-v-c:block
+set guicursor+=i:blinkwait700-blinkoff400-blinkon250-ver20
+set guicursor+=r-cr:hor20
+set guicursor+=o:hor50
+
+" Fix page up and down
+map <PageUp> <C-U>
+map <PageDown> <C-D>
+imap <PageUp> <C-O><C-U>
+imap <PageDown> <C-O><C-D>
+
+" Map moving lines up and down
+" the == re-indents the line to suite its new position
+nnoremap <A-j> :m .+1<CR>
+nnoremap <A-k> :m .-2<CR>
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Theme / Syntax highlighting
-
 " Make invisible chars less visible in terminal.
 autocmd vimrc ColorScheme * :hi NonText ctermfg=236
 autocmd vimrc ColorScheme * :hi SpecialKey ctermfg=236
@@ -77,12 +95,10 @@ autocmd vimrc ColorScheme * :hi Visual guibg=#00588A
 autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
 autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
+
 " colorscheme settings
 " Trying new colorschemes
-" :colorscheme molokai
-:colorscheme github
-" :colorscheme space-vim-dark
-" :colorscheme 256-jungle
+:colorscheme molokai
 " set background=dark
 " set the background to be a little more brown
 " let g:molokai_original = 1
@@ -101,7 +117,7 @@ set laststatus=2 " Always show status line
 
 " Show absolute numbers in insert mode, otherwise relative line numbers.
 autocmd vimrc InsertEnter * :set norelativenumber
-" autocmd vimrc InsertLeave * :set relativenumber
+autocmd vimrc InsertLeave * :set relativenumber
 
 " Make it obvious where 80 characters is
 " set textwidth=80
@@ -138,9 +154,12 @@ endif
 nnoremap <silent> <leader>v :call ToggleInvisibles()<CR>
 
 " Extra whitespace
-autocmd vimrc BufWinEnter * :2match ExtraWhitespaceMatch /\s\+$/
-autocmd vimrc InsertEnter * :2match ExtraWhitespaceMatch /\s\+\%#\@<!$/
-autocmd vimrc InsertLeave * :2match ExtraWhitespaceMatch /\s\+$/
+" autocmd vimrc BufWinEnter * :2match ExtraWhitespaceMatch /\s\+$/
+" autocmd vimrc InsertEnter * :2match ExtraWhitespaceMatch /\s\+\%#\@<!$/
+" autocmd vimrc InsertLeave * :2match ExtraWhitespaceMatch /\s\+$/
+
+" Trim trailing whitespace when writing to a buffer
+" autocmd BufWritePre * :call StripExtraWhiteSpace()
 
 " Toggle Invisibles / Show extra whitespace
 function! ToggleInvisibles()
@@ -152,8 +171,8 @@ function! ToggleInvisibles()
   endif
 endfunction
 
-set nolist
-call ToggleInvisibles()
+" set nolist
+" call ToggleInvisibles()
 
 " Trim extra whitespace
 function! StripExtraWhiteSpace()
@@ -212,11 +231,6 @@ while c <= 99
   let c += 1
 endwhile
 
-" Fix page up and down
-map <PageUp> <C-U>
-map <PageDown> <C-D>
-imap <PageUp> <C-O><C-U>
-imap <PageDown> <C-O><C-D>
 
 " Map the quickfix commands
 map <C-n> :cnext<CR>
@@ -527,6 +541,7 @@ let g:signify_vcs_list = ['git', 'hg', 'svn']
 " map <leader>p <C-P>
 " map <leader>r :CtrlPMRUFiles<CR>
 "let g:ctrlp_match_window_bottom = 0 " Show at top of window
+let g:ctrlp_working_path_mode = 'ca'
 
 " Indent Guides
 let g:indent_guides_start_level = 2
@@ -565,10 +580,6 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
@@ -624,7 +635,7 @@ Plug 'fatih/vim-go'
 Plug 'othree/xml.vim'
 Plug 'ajh17/VimCompletesMe'
 Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 " testing colorschemes
 " Plug 'flazz/vim-colorschemes'
 " Plug 'felixhummel/setcolors.vim'
