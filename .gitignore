@@ -30,6 +30,7 @@ update-notifier-npm.json
 /link/.config/pulse
 /link/.config/user-dirs*
 /link/.config/totem
+/link/.config/dconf
 
 # Ignore the tmux plugins since tmp will install them
 /link/.tmux/plugins
