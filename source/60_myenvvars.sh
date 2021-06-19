@@ -1,4 +1,4 @@
-export MYVIMRC=$HOME/init.vim
+export MYVIMRC=$HOME/.config/nvim/init.vim
 if [[ $MYENV == "macos" ]]; then
   export MYDBDEV=$HOME/Dropbox/dev
 elif [[ $MYENV == "cloud" ]]; then
@@ -11,9 +11,6 @@ fi
 
 # Set the current project you are working on for convenience
 # also get into the virtualenv
-if [[ $MYENV == "vagrant" ]]; then
-  alias cdp='cd /vagrant_dev/python/django/acas_project/'
-fi
 
 # Disable warning of change to zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1

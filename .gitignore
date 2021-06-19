@@ -31,6 +31,7 @@ update-notifier-npm.json
 /link/.config/user-dirs*
 /link/.config/totem
 /link/.config/dconf
+link/.config/pritunl
 
 # Ignore the tmux plugins since tmp will install them
 /link/.tmux/plugins
