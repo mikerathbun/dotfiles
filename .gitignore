@@ -31,7 +31,7 @@ update-notifier-npm.json
 /link/.config/user-dirs*
 /link/.config/totem
 /link/.config/dconf
-link/.config/pritunl
+/link/.config/pritunl
 
 # Ignore the tmux plugins since tmp will install them
 /link/.tmux/plugins
@@ -49,3 +49,4 @@ tmux_resurrect*
 
 # Ignore test files inside the notrack directory
 test/untracked/*
+link/.tmux/resurrect
