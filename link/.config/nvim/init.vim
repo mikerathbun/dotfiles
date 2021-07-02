@@ -460,38 +460,21 @@ let g:javascript_plugin_jsdoc = 1
 " Enables syntax for Flow
 let g:javascript_plugin_flow = 1
 
-" py settings for iMac
-let g:python_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
 
 " python-provider settings for maybe vagrant_win10
-" let g:python_host_prog = '/usr/bin/python'
-" let g:python3_host_prog = '/usr/bin/python3.7'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
-
-" Python-mode (pymode)
-let g:pymode_python = 'python3'
-let g:pymode_options_max_line_length = 95
-let g:pymode_options_colorcolumn = 1
-let g:pymode_folding = 0
-
-" Python-mode Rope settings
-let g:pymode_rope = 0
-" Extended autocompletion (rope could complete objects which have not been
-" imported) from project
-let g:pymode_rope_autoimport = 0
-
-" Load modules to autoimport by default
-" let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
-
-" Offer to unresolved import object after completion.
-" let g:pymode_rope_autoimport_import_after_complete = 0
 
 " Tab setting for Python
 autocmd FileType python set sw=4
 autocmd FileType python set ts=4
 autocmd FileType python set sts=4
 
+" jedi-vim settings
+"
+" If you want disable init routines
+" let g:jedi#auto_initialization = 0
 
 " Syntastic settings
 "
@@ -504,8 +487,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1 " in active mode run syntax checks when open and save
 let g:syntastic_check_on_wq = 0 " skip check when quitting
 let g:syntastic_aggregate_errors = 1
-" set Syntastic linting options
-let g:pymode_debug = 1
 
 
 " Airline
@@ -520,7 +501,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let NERDTreeShowHidden = 1
 let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
-map <leader>n :NERDTreeToggle<CR>
+noremap <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFocus<CR>
 autocmd vimrc StdinReadPre * let s:std_in=1
 " If no file or directory arguments are specified, open NERDtree.
@@ -601,7 +582,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Shougo/neocomplcache'        " Depenency for Shougo/neosnippet
 Plug 'godlygeek/tabular'           " This must come before plasticboy/vim-markdown
 Plug 'tpope/vim-rhubarb'           " Depenency for tpope/fugitive
-
+Plug 'plasticboy/vim-markdown'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'  " Default snippets for many languages
@@ -620,21 +601,22 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'chase/vim-ansible-yaml'
-Plug 'klen/python-mode', {'branch': 'develop'}
+Plug 'davidhalter/jedi-vim'
+" Plug 'klen/python-mode', {'branch': 'develop'}
 Plug 'mtth/scratch.vim'
-Plug 'oranget/vim-csharp'
+" Plug 'oranget/vim-csharp'
 Plug 'ervandew/supertab'
 Plug 'prettier/vim-prettier'
 " vim-go plugins and support
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'othree/xml.vim'
 Plug 'ajh17/VimCompletesMe'
-Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
+" Plug 'zchee/deoplete-go', { 'do': 'make'}      " Go auto completion
 " Plug 'vimwiki/vimwiki'
 " testing colorschemes
 " Plug 'flazz/vim-colorschemes'

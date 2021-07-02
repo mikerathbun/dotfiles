@@ -32,6 +32,10 @@ update-notifier-npm.json
 /link/.config/totem
 /link/.config/dconf
 /link/.config/pritunl
+/link/.config/ibus
+/link/.config/autostart
+/link/.config/update-notifier
+/link/.config/libreoffice
 
 # Ignore the tmux plugins since tmp will install them
 /link/.tmux/plugins
